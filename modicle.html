@@ -1,11 +1,10 @@
-
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>제목 없음</title>
     <style>
-        /* 기본 스타일 */
+        /* 전체 기본 스타일 */
         html, body {
             margin: 0;
             padding: 0;
@@ -22,35 +21,43 @@
         }
 
         .column-list {
-            display: block; /* Flex 대신 블록으로 설정 */
+            display: block; /* 블록 레이아웃 */
         }
 
         .column {
-            width: 100%; /* 1열로 설정 */
+            width: 100%; /* 항상 1열로 배치 */
             box-sizing: border-box;
-            margin-bottom: 10px; /* 아래쪽 간격 추가 */
+            margin-bottom: 20px; /* 각 콘텐츠 사이 간격 */
         }
 
         img {
-            width: 100%; /* 이미지를 페이지 너비에 맞게 조정 */
-            max-width: 560px; /* 최대 크기를 원본 크기로 제한 */
+            width: 100%; /* 이미지 크기 조정 (너비 100%) */
+            max-width: 560px; /* 최대 크기 제한 */
             height: auto; /* 비율 유지 */
+            display: block; /* 이미지 아래 여백 제거 */
+            margin: 0 auto; /* 이미지를 중앙 정렬 */
         }
 
         h1, p, li {
             font-size: 1rem; /* 기본 텍스트 크기 */
         }
 
-        /* 모바일에서 텍스트 크기만 키우기 */
+        ul {
+            margin-left: 20px;
+        }
+
+        /* 미디어 쿼리: 화면 크기 768px 이하일 경우 */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 1rem !important; /* 헤더 크기 증가 */
+            body {
+                padding: 0 10px; /* 모바일에서 여백을 줄여서 더 많은 공간 확보 */
             }
-            p {
-                font-size: 1rem !important; /* 본문 크기 증가 */
+
+            h1, p, li {
+                font-size: 1.2rem; /* 모바일에서 텍스트 크기 키우기 */
             }
-            li {
-                font-size: 1rem !important; /* 리스트 항목 크기 증가 */
+
+            img {
+                max-width: 100%; /* 이미지가 화면 크기에 맞게 늘어나도록 조정 */
             }
         }
     
