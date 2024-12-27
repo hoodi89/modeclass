@@ -1,53 +1,39 @@
 
-<html lang="ko">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>클래스 소개</title>
-    <style>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>제목 없음</title>
+<style>
+    /* cspell:disable-file */
+    /* webkit printing magic: print all background colors */
+    html {
+        -webkit-print-color-adjust: exact;
+    }
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+        white-space: pre-wrap;
+    }
+
+    body {
+        color: rgb(55, 53, 47);
+        margin: 1em auto;
+        max-width: 900px;
+        padding: 0 40px;
+    }
+
+    @media only screen {
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.5;
+            margin: 1em auto;
+            max-width: 900px;
+            padding: 0 40px;
             color: rgb(55, 53, 47);
         }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .column {
-            width: 100%;
-            margin-bottom: 2rem;
-        }
-
-        .image img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 1rem;
-        }
-
-        .highlight-red {
-            background-color: #ffe6e6;
-            color: #ff0000;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-        }
+    }
     
     a,
     a.visited {
