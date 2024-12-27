@@ -9,53 +9,60 @@ html {
     -webkit-print-color-adjust: exact;
 }
 
-html {
-    font-size: 16px; /* 기본 16px로 설정 */
-}
-
-body {
+html, body {
     margin: 0;
     padding: 0;
-    font-size: 1rem; /* 기본 폰트 크기를 1rem (16px)로 설정 */
     line-height: 1.5;
-    color: rgb(55, 53, 47);
+    white-space: pre-wrap;
+    font-family: Arial, sans-serif;
 }
 
-h1, h2, h3, p {
-    margin: 0;
-}
-
-/* 모바일 환경에서 폰트 크기 키우기 */
-@media only screen and (max-width: 600px) {
-    html {
-        font-size: 18px; /* 모바일에서 기본 폰트 크기 18px로 키우기 */
-    }
-
-    body {
-        font-size: 1rem; /* body 폰트 크기는 18px 기준으로 설정 */
-    }
-
-    h1 {
-        font-size: 2.4rem;  /* h1 크기 키우기 */
-    }
-
-    h2 {
-        font-size: 2.2rem;  /* h2 크기 키우기 */
-    }
-
-    h3 {
-        font-size: 2rem;  /* h3 크기 키우기 */
-    }
-
-    p {
-        font-size: 1.2rem;  /* 단락 텍스트 크기 키우기 */
-    }
-}
-    
 body {
-line-height: 1.5;
-white-space: pre-wrap;
-margin-top: -130px;
+    color: rgb(55, 53, 47);
+    margin: 1em auto;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.column-list {
+    display: block; /* 블록 레이아웃 */
+}
+
+.column {
+    width: 100%; /* 항상 1열로 배치 */
+    box-sizing: border-box;
+    margin-bottom: 20px; /* 각 콘텐츠 사이 간격 */
+}
+
+img {
+    width: 100%; /* 이미지 크기 조정 (너비 100%) */
+    max-width: 560px; /* 최대 크기 제한 */
+    height: auto; /* 비율 유지 */
+    display: block; /* 이미지 아래 여백 제거 */
+    margin: 0 auto; /* 이미지를 중앙 정렬 */
+}
+
+h1, h2, h3, p, li {
+    font-size: 1rem; /* 기본 텍스트 크기 */
+}
+
+ul {
+    margin-left: 20px;
+}
+
+/* 미디어 쿼리: 화면 크기 768px 이하일 경우 */
+@media (max-width: 768px) {
+    body {
+        padding: 0 10px; /* 모바일에서 여백을 줄여서 더 많은 공간 확보 */
+    }
+
+    h1, h2, h3, p, li {
+        font-size: 1.2rem; /* 모바일에서 텍스트 크기 키우기 */
+    }
+
+    img {
+        max-width: 100%; /* 이미지가 화면 크기에 맞게 늘어나도록 조정 */
+    }
 }
 
 a,
@@ -99,7 +106,6 @@ h3 {
     font-size: 1.25rem;
     margin-top: 1.25rem;
 }
-
 .source {
     border: 1px solid #ddd;
     border-radius: 3px;
