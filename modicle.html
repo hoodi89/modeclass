@@ -4,38 +4,40 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>제목 없음</title>
-<style>
-    /* cspell:disable-file */
-    /* webkit printing magic: print all background colors */
-    html {
-        -webkit-print-color-adjust: exact;
-    }
-    * {
-        box-sizing: border-box;
-        -webkit-print-color-adjust: exact;
-    }
-
-    html,
-    body {
-        font-size: 16px;
-        margin: 0;
-        padding: 0;
-        line-height: 1.5;
-        white-space: pre-wrap;
-    }
-
-    body {
-        color: rgb(55, 53, 47);
-        margin: 1em auto;
-        max-width: 900px;
-        padding: 0 40px;
-    }
-
-    @media (max-width: 768px) {
-        body {
-            font-size: 18px; /* 모바일에서 폰트 크기를 증가 */
+    <style>
+        /* cspell:disable-file */
+        /* webkit printing magic: print all background colors */
+        html {
+            -webkit-print-color-adjust: exact;
+            font-size: 16px; /* 기본 폰트 크기 */
         }
-    }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
+
+        body {
+            color: rgb(55, 53, 47);
+            margin: 1em auto;
+            max-width: 900px;
+            padding: 0 40px;
+            font-size: 1rem; /* 기본 폰트 크기 */
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 1.2rem; /* 모바일에서 폰트 크기 증가 */
+            }
+        }
     
     a,
     a.visited {
