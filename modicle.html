@@ -2,60 +2,61 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제목 없음</title>
+    <title>클래스 진행 방식</title>
     <style>
-        /* 전체 기본 스타일 */
-        html, body {
-            margin: 0;
-            padding: 0;
-            line-height: 1.5;
-            white-space: pre-wrap;
-            font-family: Arial, sans-serif;
-        }
-
+        /* 기본 스타일 */
         body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
             color: rgb(55, 53, 47);
-            margin: 1em auto;
-            max-width: 900px;
-            padding: 0 20px;
+            padding: 20px;
         }
 
-
-        img {
-            width: 100%; /* 이미지 크기 조정 (너비 100%) */
-            max-width: 560px; /* 최대 크기 제한 */
-            height: auto; /* 비율 유지 */
-            display: block; /* 이미지 아래 여백 제거 */
-            margin: 0 auto; /* 이미지를 중앙 정렬 */
+        h1 {
+            font-size: 1.75rem;
+            font-weight: bold;
+            margin-bottom: 1em;
         }
 
-        h1, h2, h3, p, li {
-            font-size: 1rem; /* 기본 텍스트 크기 */
+        p, ul {
+            margin-top: 1em;
         }
 
         ul {
-            margin-left: 20px;
+            padding-left: 20px;
         }
 
-        /* 미디어 쿼리: 화면 크기 768px 이하일 경우 */
+        mark {
+            background-color: transparent;
+            color: red;
+        }
+
+        figure {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* 반응형 스타일 (모바일) */
         @media (max-width: 768px) {
-            .column {
-                width: 100%; /* 모바일에서 모든 항목을 1열로 */
-            }
-
             body {
-                padding: 0 10px; /* 모바일에서 여백을 줄여서 더 많은 공간 확보 */
+                padding: 10px;
             }
 
-            h1, h2, h3, p, li {
-                font-size: 1.2rem; /* 모바일에서 텍스트 크기 키우기 */
+            h1 {
+                font-size: 1.5rem;
             }
 
-            img {
-                max-width: 100%; /* 이미지가 화면 크기에 맞게 늘어나도록 조정 */
+            ul {
+                padding-left: 15px;
             }
         }
-
+    </style>
 
         a,
         a.visited {
