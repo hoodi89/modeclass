@@ -38,7 +38,21 @@
                 font-size: 16px; /* 예시 */
             }
         }
-    
+
+        /* 기본 2열 스타일 */
+        .column {
+            width: 50%; /* 각 열을 50%로 나눔 */
+            box-sizing: border-box;
+            display: inline-block;
+        }
+
+        /* 모바일 화면에서 1열로 변경 */
+        @media (max-width: 768px) {
+            .column {
+                width: 100%; /* 모바일에서는 각 열을 100%로 설정하여 1열로 보이게 함 */
+            }
+        }
+
     a,
     a.visited {
         color: inherit;
