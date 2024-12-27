@@ -5,53 +5,53 @@
     <title>제목 없음</title>
     <style>
         /* 기본 스타일 */
-        html, body {
-            margin: 0;
-            padding: 0;
-            line-height: 1.5;
-            white-space: pre-wrap;
-        }
+html, body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
 
-        /* 기본 body 스타일 */
-        body {
-            color: rgb(55, 53, 47);
-            margin: 1em auto;
-            max-width: 900px;
-            padding: 0 40px;
-        }
+/* 기본 body 스타일 */
+body {
+    color: rgb(55, 53, 47);
+    margin: 1em auto;
+    max-width: 900px;
+    padding: 0 40px;
+}
 
-        /* column-list에 flexbox 사용, flex-wrap을 적용하여 아이템이 새로 줄바꿈 */
-        .column-list {
-            display: flex;
-            flex-wrap: wrap; /* 열이 부족할 경우 자동으로 줄 바꿈 */
-        }
+/* column-list에 flexbox 사용, flex-wrap을 적용하여 아이템이 새로 줄바꿈 */
+.column-list {
+    display: flex;
+    flex-wrap: wrap; /* 열이 부족할 경우 자동으로 줄 바꿈 */
+}
 
-        /* 기본 2열 스타일 (웹에서는 50%씩 배치) */
-        .column {
-            width: 50%; /* 각 열을 50%로 나눔 */
-            box-sizing: border-box;
-            padding: 10px;
-            display: flex;
-            flex-direction: column; /* 이미지와 텍스트를 세로로 배치 */
-        }
+/* 기본 2열 스타일 (웹에서는 50%씩 배치) */
+.column {
+    width: 50%; /* 각 열을 50%로 나눔 */
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column; /* 이미지와 텍스트를 세로로 배치 */
+}
 
-        /* 모바일 화면에서 1열로 변경 */
-        @media (max-width: 768px) {
-            .column {
-                width: 100%; /* 모바일에서는 각 열을 100%로 설정하여 1열로 보이게 함 */
-            }
-
-            .image img {
-                width: 100%; /* 모바일에서 이미지가 전체 너비를 차지하도록 설정 */
-            }
-        }
-
-        
-    a,
-    a.visited {
-        color: inherit;
-        text-decoration: underline;
+/* 모바일 화면에서 1열로 변경 */
+@media (max-width: 768px) {
+    .column {
+        width: 100%; /* 모바일에서는 각 열을 100%로 설정하여 1열로 보이게 함 */
     }
+
+    .image img {
+        width: 100%; /* 모바일에서 이미지가 전체 너비를 차지하도록 설정 */
+        height: auto; /* 이미지 비율 유지 */
+    }
+}
+
+a,
+a.visited {
+    color: inherit;
+    text-decoration: underline;
+}
     
     .pdf-relative-link-path {
         font-size: 80%;
