@@ -34,6 +34,10 @@ ul {
 
 /* 미디어 쿼리: 화면 크기 768px 이하일 경우 */
 @media (max-width: 768px) {
+    html {
+        font-size: 18px; /* 모바일에서 기본 폰트 크기를 18px로 키우기 */
+    }
+
     body {
         padding: 0 10px; /* 모바일에서 여백을 줄여서 더 많은 공간 확보 */
     }
@@ -58,9 +62,7 @@ a.visited {
     color: #444;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     letter-spacing: -0.01em;
     line-height: 1.2;
     font-weight: 600;
