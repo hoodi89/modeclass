@@ -9,50 +9,53 @@ html {
     -webkit-print-color-adjust: exact;
 }
 
-html,
+html {
+    font-size: 16px; /* 기본 16px로 설정 */
+}
+
 body {
-    margin: 0px;
-    padding: 0px 10px;
-    font-size: 16px; /* 기본 글꼴 크기를 16px로 설정 */
+    margin: 0;
+    padding: 0;
+    font-size: 1rem; /* 기본 폰트 크기를 1rem (16px)로 설정 */
+    line-height: 1.5;
+    color: rgb(55, 53, 47);
 }
 
-@media only screen {
-    body {
-        margin: 1em auto;
-        max-width: 900px;
-        color: rgb(55, 53, 47);
-    }
+h1, h2, h3, p {
+    margin: 0;
 }
 
+/* 모바일 환경에서 폰트 크기 키우기 */
 @media only screen and (max-width: 600px) {
     html {
-        font-size: 18px; /* 모바일 화면에서 글꼴 크기 키우기 */
+        font-size: 18px; /* 모바일에서 기본 폰트 크기 18px로 키우기 */
     }
-    
+
     body {
-        font-size: 1rem; /* 기본 폰트 크기를 18px에 맞게 설정 */
+        font-size: 1rem; /* body 폰트 크기는 18px 기준으로 설정 */
     }
 
     h1 {
-        font-size: 2.2rem;  /* h1 글씨 크기 키우기 */
+        font-size: 2.4rem;  /* h1 크기 키우기 */
     }
 
     h2 {
-        font-size: 2rem;  /* h2 글씨 크기 키우기 */
+        font-size: 2.2rem;  /* h2 크기 키우기 */
     }
 
     h3 {
-        font-size: 1.8rem;  /* h3 글씨 크기 키우기 */
+        font-size: 2rem;  /* h3 크기 키우기 */
     }
 
     p {
         font-size: 1.2rem;  /* 단락 텍스트 크기 키우기 */
     }
 }
+    
 body {
-    line-height: 1.5;
-    white-space: pre-wrap;
-    margin-top: -130px;
+line-height: 1.5;
+white-space: pre-wrap;
+margin-top: -130px;
 }
 
 a,
