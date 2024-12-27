@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>플로팅 버튼</title>
+  <style>
+    /* 플로팅 버튼 스타일 */
+    .floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .floating-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 플로팅 버튼 -->
+  <button class="floating-button" id="payment-button">결제하기</button>
+
+  <script>
+    document.getElementById('payment-button').addEventListener('click', function() {
+      alert("결제하기 버튼 클릭됨!");
+      // 여기에서 결제 로직을 추가하거나, 다른 페이지로 리디렉션할 수 있습니다.
+    });
+  </script>
+
+</body>
+</html>
