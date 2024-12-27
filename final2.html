@@ -1,100 +1,103 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>제목 없음</title><style>
-/* cspell:disable-file */
-/* webkit printing magic: print all background colors */
-html {
-    -webkit-print-color-adjust: exact;
-    font-size: 16px; /* 기본 폰트 크기 설정 */
-}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목 없음</title>
+    <style>
+        /* cspell:disable-file */
+        /* webkit printing magic: print all background colors */
+        html {
+            -webkit-print-color-adjust: exact;
+            font-size: 16px; /* 기본 폰트 크기 설정 */
+        }
 
-* {
-    box-sizing: border-box;
-    -webkit-print-color-adjust: exact;
-}
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+        }
 
-html, body {
-    margin:0
-    padding: 10px;
-    line-height: 1.5;
-    white-space: pre-wrap;
-    margin-top:-100px
-    font-family: Arial, sans-serif;
-}
+        html, body {
+            margin: 0;
+            padding: 10px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            margin-top: 0; /* 상단 여백을 0으로 설정 */
+            font-family: Arial, sans-serif;
+        }
 
-body {
-    color: rgb(55, 53, 47);
-    margin: 1em auto;
-    max-width: 900px;
-    padding: 0 20px;
-}
+        body {
+            color: rgb(55, 53, 47);
+            margin: 1em auto;
+            max-width: 900px;
+            padding: 0 20px;
+        }
 
-h1, h2, h3, p, li {
-    font-size: 1rem; /* 기본 텍스트 크기 */
-}
+        h1, h2, h3, p, li {
+            font-size: 1rem; /* 기본 텍스트 크기 */
+        }
 
-ul {
-    margin-left: 20px;
-}
+        ul {
+            margin-left: 20px;
+        }
 
-/* 미디어 쿼리: 화면 크기 768px 이하일 경우 */
-@media (max-width: 768px) {
-    html {
-        font-size: 14px; /* 모바일에서 기본 폰트 크기를 16px로 키우기 */
-    }
+        /* 미디어 쿼리: 화면 크기 768px 이하일 경우 */
+        @media (max-width: 768px) {
+            html {
+                font-size: 14px; /* 모바일에서 기본 폰트 크기를 16px로 키우기 */
+            }
 
-    body {
-        padding: 0 10px; /* 모바일에서 여백을 줄여서 더 많은 공간 확보 */
-    }
+            body {
+                padding: 0 10px; /* 모바일에서 여백을 줄여서 더 많은 공간 확보 */
+            }
 
-    h1, h2, h3, p, li {
-        font-size: 1rem; /* 모바일에서 텍스트 크기 키우기 */
-    }
+            h1, h2, h3, p, li {
+                font-size: 1rem; /* 모바일에서 텍스트 크기 키우기 */
+            }
 
-    img {
-        max-width: 100%; /* 이미지가 화면 크기에 맞게 늘어나도록 조정 */
-    }
-}
+            img {
+                max-width: 100%; /* 이미지가 화면 크기에 맞게 늘어나도록 조정 */
+            }
+        }
 
-a,
-a.visited {
-    color: inherit;
-    text-decoration: underline;
-}
+        a,
+        a.visited {
+            color: inherit;
+            text-decoration: underline;
+        }
 
-.pdf-relative-link-path {
-    font-size: 80%;
-    color: #444;
-}
+        .pdf-relative-link-path {
+            font-size: 80%;
+            color: #444;
+        }
 
-h1, h2, h3 {
-    letter-spacing: -0.01em;
-    line-height: 1.2;
-    font-weight: 600;
-    margin-bottom: 0;
-}
+        h1, h2, h3 {
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
 
-.page-title {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-top: 0;
-    margin-bottom: 0.75em;
-}
+        .page-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 0.75em;
+        }
 
-h1 {
-    font-size: 1.875rem;
-    margin-top: 1.875rem;
-}
+        h1 {
+            font-size: 1.875rem;
+            margin-top: 0.5rem; /* 상단 여백을 조금 줄여줍니다 */
+        }
 
-h2 {
-    font-size: 1.3rem;
-    margin-top: 1.3rem;
-}
+        h2 {
+            font-size: 1.3rem;
+            margin-top: 1rem; /* 여백을 조정 */
+        }
 
-h3 {
-    font-size: 1rem;
-    margin-top: 1rem;
-}
-
+        h3 {
+            font-size: 1rem;
+            margin-top: 1rem; /* 여백을 조정 */
+        }
 .source {
     border: 1px solid #ddd;
     border-radius: 3px;
