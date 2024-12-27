@@ -10,7 +10,26 @@
         box-sizing: border-box;
         -webkit-print-color-adjust: exact;
     }
+    
+    body {
+        font-size: 16px; /* 기본 폰트 크기 */
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+      }
 
+      /* 모바일에서 폰트 크기 증가 */
+      @media (max-width: 768px) {
+        body {
+          font-size: 18px; /* 모바일 화면에서는 폰트를 키운다 */
+        }
+      }
+
+      /* 폰트 크기를 viewport 비율로 설정 (옵션) */
+      body {
+        font-size: 4vw; /* 화면 너비의 4% 크기 */
+      }
+    
     html,
     body {
         margin: 0;
