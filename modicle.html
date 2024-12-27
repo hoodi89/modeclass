@@ -2,24 +2,16 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>제목 없음</title>
     <style>
-        /* cspell:disable-file */
-        /* webkit printing magic: print all background colors */
-        html {
-            -webkit-print-color-adjust: exact;
-        }
-        * {
-            box-sizing: border-box;
-            -webkit-print-color-adjust: exact;
-        }
-
-        html,
-        body {
+        /* 기본 스타일 */
+        html, body {
             margin: 0;
             padding: 0;
             line-height: 1.5;
             white-space: pre-wrap;
+            font-family: Arial, sans-serif;
         }
 
         body {
@@ -29,22 +21,22 @@
             padding: 0 40px;
         }
 
-        @media only screen {
-            body {
-                margin: 1em auto;
-                max-width: 900px;
-                padding: 0 40px;
-                color: rgb(55, 53, 47);
-            }
+        img {
+            width: 100%; /* 이미지를 페이지 너비에 맞게 조정 */
+            max-width: 560px; /* 최대 크기를 원본 크기로 제한 */
+            height: auto; /* 비율 유지 */
         }
 
-        /* 모바일에서 텍스트 크기 증가 */
+        /* 모바일에서 텍스트 크기만 키우기 */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem; /* 모바일 헤더 크기 증가 */
+                font-size: 2rem; /* 헤더 크기 증가 */
             }
-            p, li {
-                font-size: 1.2rem; /* 본문 및 리스트 항목 크기 증가 */
+            p {
+                font-size: 1.2rem; /* 본문 크기 증가 */
+            }
+            li {
+                font-size: 1.2rem; /* 리스트 항목 크기 증가 */
             }
         }
     
