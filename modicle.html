@@ -5,56 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>제목 없음</title>
 <style>
-    /* cspell:disable-file */
-    /* webkit printing magic: print all background colors */
-    html {
-        -webkit-print-color-adjust: exact;
-    }
-    * {
-        box-sizing: border-box;
-        -webkit-print-color-adjust: exact;
-    }
+        /* cspell:disable-file */
+        /* webkit printing magic: print all background colors */
+        html {
+            -webkit-print-color-adjust: exact;
+        }
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+        }
 
-    html,
-    body {
-        font-size: 16px;
-        margin: 0;
-        padding: 0;
-        line-height: 1.5;
-        white-space: pre-wrap;
-    }
+        /* 기본 스타일 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
 
-    body {
-        color: rgb(55, 53, 47);
-        margin: 1em auto;
-        max-width: 900px;
-        padding: 0 40px;
-    }
-
-    @media (max-width: 768px) {
+        /* 기본 body 스타일 */
         body {
-            font-size: 18px; /* 모바일에서 폰트 크기를 증가 */
-        }
-    }
-
-    /* 기본 스타일 */
-        .column-list {
-            display: flex;
-            flex-wrap: wrap;
+            color: rgb(55, 53, 47);
+            margin: 1em auto;
+            max-width: 900px;
+            padding: 0 40px;
         }
 
-        .column {
-            width: 50%; /* 데스크탑에서는 2열 */
-            padding: 10px; /* 열 사이 여백 */
-        }
-
-        /* 모바일에서 1열로 */
-        @media (max-width: 768px) {
-            .column {
-                width: 100%; /* 모바일에서는 1열 */
+        /* 모바일 화면에서 폰트 크기 및 기타 스타일 수정 */
+        @media only screen {
+            body {
+                /* 기존 body 스타일을 여기에 추가할 수 있습니다. */
+                font-size: 16px; /* 예시 */
             }
         }
-
     
     a,
     a.visited {
