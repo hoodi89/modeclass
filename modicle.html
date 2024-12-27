@@ -20,17 +20,19 @@
             padding: 0 40px;
         }
 
-        /* column-list에 flexbox 사용 */
+        /* column-list에 flexbox 사용, flex-wrap을 적용하여 아이템이 새로 줄바꿈 */
         .column-list {
             display: flex;
             flex-wrap: wrap; /* 열이 부족할 경우 자동으로 줄 바꿈 */
         }
 
-        /* 기본 2열 스타일 */
+        /* 기본 2열 스타일 (웹에서는 50%씩 배치) */
         .column {
             width: 50%; /* 각 열을 50%로 나눔 */
             box-sizing: border-box;
             padding: 10px;
+            display: flex;
+            flex-direction: column; /* 이미지와 텍스트를 세로로 배치 */
         }
 
         /* 모바일 화면에서 1열로 변경 */
@@ -38,7 +40,12 @@
             .column {
                 width: 100%; /* 모바일에서는 각 열을 100%로 설정하여 1열로 보이게 함 */
             }
+
+            .image img {
+                width: 100%; /* 모바일에서 이미지가 전체 너비를 차지하도록 설정 */
+            }
         }
+
         
     a,
     a.visited {
