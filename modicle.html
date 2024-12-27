@@ -1,57 +1,45 @@
-<html lang="ko">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제목 없음</title>
-    <style>
-            /* 기본 스타일 */
-    html, body {
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>제목 없음</title>
+<style>
+    /* cspell:disable-file */
+    /* webkit printing magic: print all background colors */
+    html {
+        -webkit-print-color-adjust: exact;
+    }
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+    }
+
+    html,
+    body {
         margin: 0;
         padding: 0;
         line-height: 1.5;
         white-space: pre-wrap;
     }
-    
-    /* 기본 body 스타일 */
+
     body {
         color: rgb(55, 53, 47);
         margin: 1em auto;
         max-width: 900px;
         padding: 0 40px;
     }
-    
-    /* column-list에 flexbox 사용, flex-wrap을 적용하여 아이템이 새로 줄바꿈 */
-    .column-list {
-        display: flex;
-        flex-wrap: wrap; /* 열이 부족할 경우 자동으로 줄 바꿈 */
-    }
-    
-    /* 기본 2열 스타일 (웹에서는 50%씩 배치) */
-    .column {
-        width: 50%; /* 각 열을 50%로 나눔 */
-        box-sizing: border-box;
-        padding: 10px;
-        display: flex;
-        flex-direction: column; /* 이미지와 텍스트를 세로로 배치 */
-    }
-    
-    /* 모바일 화면에서 1열로 변경 */
-    @media (max-width: 768px) {
-        .column {
-            width: 100%; /* 모바일에서는 각 열을 100%로 설정하여 1열로 보이게 함 */
-        }
-    
-        .image img {
-            width: 100%; /* 모바일에서 이미지가 전체 너비를 차지하도록 설정 */
-            height: auto; /* 이미지 비율 유지 */
-        }
-    }
 
-a,
-a.visited {
-    color: inherit;
-    text-decoration: underline;
-}
+    @media only screen {
+        body {
+            margin: 1em auto;
+            max-width: 900px;
+            padding: 0 40px;
+            color: rgb(55, 53, 47);
+        }
+    }
+    
+    a,
+    a.visited {
+        color: inherit;
+        text-decoration: underline;
+    }
     
     .pdf-relative-link-path {
         font-size: 80%;
@@ -759,88 +747,13 @@ a.visited {
     </p><p id="1690bff6-cbae-81ca-beb4-e5f59088d09b" class="">내가 디자인 한 화면이 잘 된 화면인지, 문제는 무엇인지 부족한 점이 무엇인지 <strong>튜터에게 피드백을 받고</strong></p><p id="1690bff6-cbae-81e4-b9f2-ec9c51f10db5" class=""><strong>같이 진행하는 참여자들과 같이 공유하며 소통</strong>해 보세요!</p><p id="1690bff6-cbae-81fe-8401-f0bb8c7d8504" class="">
     </p><p id="1690bff6-cbae-81ec-8dcc-ed8099eb1f33" class="">
     </p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-8120-a3b2-fd9749c53fae"><div style="width:100%"><h3 id="1690bff6-cbae-8193-a271-fcac74682dab" class="">💡 <strong><a href="https://www.notion.so/1690bff6cbae803ebd98f142a64348a3?pvs=21">지금 알림 신청하시고, </a></strong><strong><a href="https://www.notion.so/1690bff6cbae803ebd98f142a64348a3?pvs=21"><span style="border-bottom:0.05em solid">선착순</span></a></strong><strong><a href="https://www.notion.so/1690bff6cbae803ebd98f142a64348a3?pvs=21">으로 클래스에 참여해 보세요!</a></strong></h3></div></figure><p id="1690bff6-cbae-8157-b5f1-c7cdf9175078" class="">
-    </p><h1 id="1690bff6-cbae-8139-9dce-cbcf81778759" class="">
-    💡<h1><br/>클래스는<br/>이렇게 진행해요!<br/></h1>
-        
-    <div id="1690bff6-cbae-817c-a913-eda9bff77b41" class="column-list">
-        <div id="1690bff6-cbae-8131-a075-c3b47beb5dc9" class="column">
-            <figure id="1690bff6-cbae-81e1-bf38-e16a7d39a93f" class="image">
-                <a href="https://github.com/hoodi89/payment_page/blob/main/zoom.png?raw=true">
-                    <img style="width:100%" src="https://github.com/hoodi89/payment_page/blob/main/zoom.png?raw=true"/>
-                </a>
-            </figure>
-        </div>
-        <div id="1690bff6-cbae-818e-9981-e8f538d104c0" class="column">
-            <p id="1690bff6-cbae-81d5-bfef-e42c7167a2b7" class=""><mark class="highlight-red"><strong>[각 주차별 실시간 모바일 디자인 강의 진행]</strong></mark></p>
-            <ul id="1690bff6-cbae-81cf-b71d-f9c6c5368e2b" class="bulleted-list">
-                <li style="list-style-type:disc">각 주차 별로 모바일 디자인에서 중요한 <strong>여러 정보, 팁, 실무와 관련된 내용</strong>에 대해서 배워요.</li>
-            </ul>
-            <ul id="1690bff6-cbae-8178-a128-eddf15057bcd" class="bulleted-list">
-                <li style="list-style-type:disc"><strong>실제 앱 서비스 화면</strong>을 보며 이해를 도와요.</li>
-            </ul>
-            <ul id="1690bff6-cbae-8184-9c55-d0f61657b5e0" class="bulleted-list">
-                <li style="list-style-type:disc">강의가 끝나고 <strong>질문/답변</strong> 시간에 궁금한 점들을 확인해요.</li>
-            </ul>
-            <ul id="1690bff6-cbae-81d1-8a65-d2b00d2a6877" class="bulleted-list">
-                <li style="list-style-type:disc">불가피하게 참여하지 못하는 경우에도 <strong>녹화본 VOD를</strong> 통해 학습할 수 있어요.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="1690bff6-cbae-81cc-a3c3-e6a772e17cc5" class="column-list">
-        <div id="1690bff6-cbae-81c2-a796-d58a36cce08a" class="column">
-            <figure id="1690bff6-cbae-81cd-aba9-e6574b50fe99" class="image">
-                <a href="https://github.com/hoodi89/payment_page/blob/main/tutor.png?raw=true">
-                    <img style="width:100%" src="https://github.com/hoodi89/payment_page/blob/main/tutor.png?raw=true"/>
-                </a>
-            </figure>
-        </div>
-        <div id="1690bff6-cbae-8130-ac63-c1b94d0d9c02" class="column">
-            <p id="1690bff6-cbae-81a3-b85a-fccbdf66d765" class=""><mark class="highlight-red"><strong>[배운 내용을 토대로 튜터와 함께 화면 제작 실습]</strong></mark></p>
-            <ul id="1690bff6-cbae-8114-86d3-d3ef6bc2d3ff" class="bulleted-list">
-                <li style="list-style-type:disc">이론만으로 그치지 않고 실제 배운 정보들을 어떻게 활용할 수 있는지를 <strong>직접 따라하며 연습</strong>할 수 있어요.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="1690bff6-cbae-81a3-a49c-ffea5bf338f9" class="column-list">
-        <div id="1690bff6-cbae-8187-a976-dbde2b85cfa3" class="column">
-            <figure id="1690bff6-cbae-81c3-a6c2-c87b43138751" class="image">
-                <a href="https://github.com/hoodi89/payment_page/blob/main/silsup.png?raw=true">
-                    <img style="width:100%" src="https://github.com/hoodi89/payment_page/blob/main/silsup.png?raw=true"/>
-                </a>
-            </figure>
-        </div>
-        <div id="1690bff6-cbae-8123-8661-e959c0816e8f" class="column">
-            <p id="1690bff6-cbae-81a6-b8cf-ca8dfdc19727" class=""><mark class="highlight-red"><strong>[실습을 응용한 와이어프레임 토대의 화면 제작]</strong></mark></p>
-            <ul id="1690bff6-cbae-815f-81e4-fc85f121b569" class="bulleted-list">
-                <li style="list-style-type:disc">실제로 실무에서 하는 것처럼 <strong>주어진 와이어프레임과 그에 맞는 조건</strong>을 가지고 스스로 디자인을 적용해 보며 <strong>화면 설계 능력</strong>을 키울 수 있어요.</li>
-            </ul>
-            <ul id="1690bff6-cbae-817b-82d3-e81c5ab8d2ae" class="bulleted-list">
-                <li style="list-style-type:disc">과제를 진행하다가 도움이 필요하면 <strong>튜터에게 도움</strong>을 청할 수 있어요.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="1690bff6-cbae-81ba-b2c5-f02fd5546370" class="column-list">
-        <div id="1690bff6-cbae-8138-aba1-fa387d3d4dd6" class="column">
-            <figure id="1690bff6-cbae-81c3-b70f-eef51feac341" class="image">
-                <a href="https://github.com/hoodi89/payment_page/blob/main/feedback.png?raw=true">
-                    <img style="width:100%" src="https://github.com/hoodi89/payment_page/blob/main/feedback.png?raw=true"/>
-                </a>
-            </figure>
-        </div>
-        <div id="1690bff6-cbae-81f9-9b81-ca92448b9220" class="column">
-            <p id="1690bff6-cbae-818f-ad3f-e93590bca30c" class=""><mark class="highlight-red"><strong>[지속적인 피드백을 통한 문제점 보완 및 실력 향상]</strong></mark></p>
-            <ul id="1690bff6-cbae-817d-9836-cfdb4737aae7" class="bulleted-list">
-                <li style="list-style-type:disc"><strong>막히는 부분과 궁금한 점</strong>들을 <strong>튜터에게 묻고 답하여</strong> 확실히 짚고 넘어 갈 수 있어요.</li>
-            </ul>
-        </div>
-    </div>
-
-        
-        
-    📚 <br/>모디클 <br/>상세 커리큘럼<br/></h1><h3 id="1690bff6-cbae-81b2-b80c-f506ff1207ca" class=""><strong>다음의 과정을 통하여 클래스가 진행됩니다.</strong></h3><p id="1690bff6-cbae-813a-b5f1-f7dee1972124" class="">
+    </p><h1 id="1690bff6-cbae-8139-9dce-cbcf81778759" class="">💡<br/>클래스는<br/>이렇게 진행해요!<br/></h1><div id="1690bff6-cbae-817c-a913-eda9bff77b41" class="column-list"><div id="1690bff6-cbae-8131-a075-c3b47beb5dc9" style="width:50%" class="column"><figure id="1690bff6-cbae-81e1-bf38-e16a7d39a93f" class="image"><a href="https://github.com/hoodi89/payment_page/blob/main/zoom.png?raw=true"><img style="width:560.98095703125px" src="https://github.com/hoodi89/payment_page/blob/main/zoom.png?raw=true"/></a></figure></div><div id="1690bff6-cbae-818e-9981-e8f538d104c0" style="width:50%" class="column"><p id="1690bff6-cbae-81d5-bfef-e42c7167a2b7" class=""><mark class="highlight-red"><strong>[각 주차별 실시간 모바일 디자인 강의 진행]</strong></mark></p><ul id="1690bff6-cbae-81cf-b71d-f9c6c5368e2b" class="bulleted-list"><li style="list-style-type:disc">각 주차 별로 모바일 디자인에서 중요한 <strong>여러 정보, 팁, 실무와 관련된 내용</strong>에 대해서 배워요.</li></ul><ul id="1690bff6-cbae-8178-a128-eddf15057bcd" class="bulleted-list"><li style="list-style-type:disc"><strong>실제 앱 서비스 화면</strong>을 보며 이해를 도와요.</li></ul><ul id="1690bff6-cbae-8184-9c55-d0f61657b5e0" class="bulleted-list"><li style="list-style-type:disc">강의가 끝나고 <strong>질문/답변</strong> 시간에 궁금한 점들을 확인해요.</li></ul><ul id="1690bff6-cbae-81d1-8a65-d2b00d2a6877" class="bulleted-list"><li style="list-style-type:disc">불가피하게 참여하지 못하는 경우에도 <strong>녹화본 VOD를</strong> 통해 학습할 수 있어요.</li></ul></div></div><p id="1690bff6-cbae-8165-84be-dd7025cf9087" class="">
+    </p><div id="1690bff6-cbae-81cc-a3c3-e6a772e17cc5" class="column-list"><div id="1690bff6-cbae-81c2-a796-d58a36cce08a" style="width:50%" class="column"><figure id="1690bff6-cbae-81cd-aba9-e6574b50fe99" class="image"><a href="https://github.com/hoodi89/payment_page/blob/main/tutor.png?raw=true"><img style="width:560.98095703125px" src="https://github.com/hoodi89/payment_page/blob/main/tutor.png?raw=true"/></a></figure></div><div id="1690bff6-cbae-8130-ac63-c1b94d0d9c02" style="width:50%" class="column"><p id="1690bff6-cbae-81a3-b85a-fccbdf66d765" class=""><mark class="highlight-red"><strong>[배운 내용을 토대로 튜터와 함께 화면 제작 실습]</strong></mark></p><ul id="1690bff6-cbae-8114-86d3-d3ef6bc2d3ff" class="bulleted-list"><li style="list-style-type:disc">이론만으로 그치지 않고 실제 배운 정보들을 어떻게 활용할 수 있는지를 <strong>직접 따라하며 연습</strong>할 수 있어요.</li></ul></div></div><p id="1690bff6-cbae-814d-99db-fa22072d44cd" class="">
+    </p><div id="1690bff6-cbae-81a3-a49c-ffea5bf338f9" class="column-list"><div id="1690bff6-cbae-8187-a976-dbde2b85cfa3" style="width:50%" class="column"><figure id="1690bff6-cbae-81c3-a6c2-c87b43138751" class="image"><a href="https://github.com/hoodi89/payment_page/blob/main/silsup.png?raw=true"><img style="width:560.98095703125px" src="https://github.com/hoodi89/payment_page/blob/main/silsup.png?raw=true"/></a></figure></div><div id="1690bff6-cbae-8123-8661-e959c0816e8f" style="width:50%" class="column"><p id="1690bff6-cbae-81a6-b8cf-ca8dfdc19727" class=""><mark class="highlight-red"><strong>[실습을 응용한 와이어프레임 토대의 화면 제작]</strong></mark></p><ul id="1690bff6-cbae-815f-81e4-fc85f121b569" class="bulleted-list"><li style="list-style-type:disc">실제로 실무에서 하는 것처럼 <strong>주어진 와이어프레임과 그에 맞는 조건</strong>을 가지고 스스로 디자인을 적용해 보며 <strong>화면 설계 능력</strong>을 키울 수 있어요.</li></ul><ul id="1690bff6-cbae-817b-82d3-e81c5ab8d2ae" class="bulleted-list"><li style="list-style-type:disc">과제를 진행하다가 도움이 필요하면 <strong>튜터에게 도움</strong>을 청할 수 있어요.</li></ul></div></div><p id="1690bff6-cbae-81d9-a2d5-fae7be07397f" class="">
+    </p><div id="1690bff6-cbae-81ba-b2c5-f02fd5546370" class="column-list"><div id="1690bff6-cbae-8138-aba1-fa387d3d4dd6" style="width:50%" class="column"><figure id="1690bff6-cbae-81c3-b70f-eef51feac341" class="image"><a href="https://github.com/hoodi89/payment_page/blob/main/feedback.png?raw=true"><img style="width:560px" src="https://github.com/hoodi89/payment_page/blob/main/feedback.png?raw=true"/></a></figure></div><div id="1690bff6-cbae-81f9-9b81-ca92448b9220" style="width:50%" class="column"><p id="1690bff6-cbae-818f-ad3f-e93590bca30c" class=""><mark class="highlight-red"><strong>[지속적인 피드백을 통한 문제점 보완 및 실력 향상]</strong></mark></p><ul id="1690bff6-cbae-817d-9836-cfdb4737aae7" class="bulleted-list"><li style="list-style-type:disc"><strong>막히는 부분과 궁금한 점</strong>들을 <strong>튜터에게 묻고 답하여</strong> 확실히 짚고 넘어 갈 수 있어요.</li></ul></div></div><p id="1690bff6-cbae-8152-a55a-d0817fdfcaf8" class="">
+    </p><p id="1690bff6-cbae-8119-9494-e20c1c27823d" class="">
+    </p><hr id="1690bff6-cbae-8176-a669-cba29ca41d12"/><p id="1690bff6-cbae-8131-8d96-ea42315e3987" class="">
+    </p><h1 id="1690bff6-cbae-81cb-afaa-e681136bfc44" class="">📚 <br/>모디클 <br/>상세 커리큘럼<br/></h1><h3 id="1690bff6-cbae-81b2-b80c-f506ff1207ca" class=""><strong>다음의 과정을 통하여 클래스가 진행됩니다.</strong></h3><p id="1690bff6-cbae-813a-b5f1-f7dee1972124" class="">
     </p><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-8199-b851-d6d83733d68b"><div style="width:100%"><h3 id="1690bff6-cbae-8180-a385-d2e00c04f358" class=""><strong>1주차 : 모바일 디자인의 기초 다지기</strong></h3><ul id="1690bff6-cbae-8183-8de3-d152ff4b6e10" class="toggle"><li><details open=""><summary><mark class="highlight-blue"><strong>1주차 강의 상세 보기</strong></mark></summary><ul id="1690bff6-cbae-81b3-a714-ce2f6a70976e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default">기초 컬러 개념</mark></li></ul><ul id="1690bff6-cbae-8190-b6cb-e5ffe4cc72da" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default">컬러의 위계</mark></li></ul><ul id="1690bff6-cbae-816d-a0b8-f9957ba94b11" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default">폰트 &amp; 텍스트</mark></li></ul><ul id="1690bff6-cbae-812b-bf72-d401688414bc" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default">여백</mark></li></ul><ul id="1690bff6-cbae-810e-8bce-c4431630f10d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><mark class="highlight-orange_background">강의 내용을 토대로 한 실습 &amp; 과제</mark></mark></li></ul></details></li></ul></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-81ae-a82b-ed3614228af3"><div style="width:100%"><h3 id="1690bff6-cbae-8176-948e-dfab0caf2a21" class=""><strong>2주차 : 필수적으로 알아야 할 컴포넌트 및 UI의 이해</strong></h3><ul id="1690bff6-cbae-8123-b48f-f8a889eeccc1" class="toggle"><li><details open=""><summary><mark class="highlight-blue"><strong>2주차 강의 상세 보기</strong></mark></summary><ul id="1690bff6-cbae-8119-a6d6-ce9e9595a274" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default">버튼의 정의</mark></li></ul><ul id="1690bff6-cbae-8100-a1e5-ca620fbc5a3f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default">컴포넌트의 종류</mark></li></ul><ul id="1690bff6-cbae-818d-99e3-fa75d12e4a3c" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><mark class="highlight-orange_background">강의 내용을 토대로 한 실습 &amp; 과제</mark></mark></li></ul></details></li></ul></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-81af-a4a2-c3ba1a738877"><div style="width:100%"><h3 id="1690bff6-cbae-8143-894e-f261ce0a1860" class=""><strong>3주차 : 모바일 서비스의 주요 화면 별 패턴 알아보기</strong></h3><ul id="1690bff6-cbae-8185-bca2-f3ce7e8fad7d" class="toggle"><li><details open=""><summary><mark class="highlight-blue"><strong>3주차 강의 상세 보기</strong></mark></summary><ul id="1690bff6-cbae-8148-80db-e460755bb966" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><mark class="highlight-default_background">서비스 진입 전 공통 패턴</mark></mark><ul id="1690bff6-cbae-81e9-8db0-f169f68f4b2a" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-default">스플래시 화면, 로그인, 회원가입</mark></li></ul></li></ul><ul id="1690bff6-cbae-8166-95f8-d8654e27b5ee" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><mark class="highlight-default_background">서비스 진입 후 공통 패턴</mark></mark><ul id="1690bff6-cbae-8139-9bab-f6bf9a41ae6e" class="bulleted-list"><li style="list-style-type:circle">메인, GNB, 컨텐츠 리스트, 선택, 필터&amp;정렬 등</li></ul></li></ul><ul id="1690bff6-cbae-8112-9bd0-f7b07b305744" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><mark class="highlight-orange_background">강의 내용을 토대로 한 실습 &amp; 과제</mark></mark></li></ul></details></li></ul></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-8165-9ca5-cc41b1d4f52f"><div style="width:100%"><h3 id="1690bff6-cbae-81f5-8804-e6fc5047936c" class=""><strong>4주차 : 각 주차 배운 내용을 토대로 한 최종 과제 및 발표</strong></h3><p id="1690bff6-cbae-81dd-a479-e01171d71832" class="">→ 여러 화면이 연계되어 있는 <strong>MVP 형태</strong>의 화면 디자인 </p></div></figure><p id="1690bff6-cbae-8127-8fb5-c5ccead35392" class="">
     </p><p id="1690bff6-cbae-81ff-bd2e-e0bc2e6b1cb4" class="">
     </p><h1 id="1690bff6-cbae-8190-893c-dda3119571b4" class="">👩‍👧‍👦<br/>모집인원 및 <br/>가격 안내<br/></h1><p id="1690bff6-cbae-8186-aff3-e9bf1f3b164e" class="">
