@@ -1,0 +1,779 @@
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>제목 없음</title>
+<style>
+    /* cspell:disable-file */
+    /* webkit printing magic: print all background colors */
+    html {
+        -webkit-print-color-adjust: exact;
+    }
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    @media only screen {
+        body {
+            margin: 1em auto;
+            max-width: 900px;
+            padding: 0 40px;
+            color: rgb(55, 53, 47);
+        }
+    }
+    
+    body {
+        line-height: 1.5;
+        white-space: pre-wrap;
+    }
+    
+    a,
+    a.visited {
+        color: inherit;
+        text-decoration: underline;
+    }
+    
+    .pdf-relative-link-path {
+        font-size: 80%;
+        color: #444;
+    }
+    
+    h1,
+    h2,
+    h3 {
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0.75em;
+    }
+    
+    h1 {
+        font-size: 1.875rem;
+        margin-top: 1.875rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+        margin-top: 1.25rem;
+    }
+    
+    .source {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 1.5em;
+        word-break: break-all;
+    }
+    
+    .callout {
+        border-radius: 3px;
+        padding: 1rem;
+    }
+    
+    figure {
+        margin: 1.25em 0;
+        page-break-inside: avoid;
+    }
+    
+    figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+    
+    mark {
+        background-color: transparent;
+    }
+    
+    .indented {
+        padding-left: 1.5em;
+    }
+    
+    hr {
+        background: transparent;
+        display: block;
+        width: 100%;
+        height: 1px;
+        visibility: visible;
+        border: none;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+    }
+    
+    img {
+        max-width: 100%;
+    }
+    
+    @media only print {
+        img {
+            max-height: 100vh;
+            object-fit: contain;
+        }
+    }
+    
+    @page {
+        margin: 1in;
+    }
+    
+    .collection-content {
+        font-size: 0.875rem;
+    }
+    
+    .column-list {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .column {
+        padding: 0 1em;
+    }
+    
+    .column:first-child {
+        padding-left: 0;
+    }
+    
+    .column:last-child {
+        padding-right: 0;
+    }
+    
+    .table_of_contents-item {
+        display: block;
+        font-size: 0.875rem;
+        line-height: 1.3;
+        padding: 0.125rem;
+    }
+    
+    .table_of_contents-indent-1 {
+        margin-left: 1.5rem;
+    }
+    
+    .table_of_contents-indent-2 {
+        margin-left: 3rem;
+    }
+    
+    .table_of_contents-indent-3 {
+        margin-left: 4.5rem;
+    }
+    
+    .table_of_contents-link {
+        text-decoration: none;
+        opacity: 0.7;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+    }
+    
+    table,
+    th,
+    td {
+        border: 1px solid rgba(55, 53, 47, 0.09);
+        border-collapse: collapse;
+    }
+    
+    table {
+        border-left: none;
+        border-right: none;
+    }
+    
+    th,
+    td {
+        font-weight: normal;
+        padding: 0.25em 0.5em;
+        line-height: 1.5;
+        min-height: 1.5em;
+        text-align: left;
+    }
+    
+    th {
+        color: rgba(55, 53, 47, 0.6);
+    }
+    
+    ol,
+    ul {
+        margin: 0;
+        margin-block-start: 0.6em;
+        margin-block-end: 0.6em;
+    }
+    
+    li > ol:first-child,
+    li > ul:first-child {
+        margin-block-start: 0.6em;
+    }
+    
+    ul > li {
+        list-style: disc;
+    }
+    
+    ul.to-do-list {
+        padding-inline-start: 0;
+    }
+    
+    ul.to-do-list > li {
+        list-style: none;
+    }
+    
+    .to-do-children-checked {
+        text-decoration: line-through;
+        opacity: 0.375;
+    }
+    
+    ul.toggle > li {
+        list-style: none;
+    }
+    
+    ul {
+        padding-inline-start: 1.7em;
+    }
+    
+    ul > li {
+        padding-left: 0.1em;
+    }
+    
+    ol {
+        padding-inline-start: 1.6em;
+    }
+    
+    ol > li {
+        padding-left: 0.2em;
+    }
+    
+    .mono ol {
+        padding-inline-start: 2em;
+    }
+    
+    .mono ol > li {
+        text-indent: -0.4em;
+    }
+    
+    .toggle {
+        padding-inline-start: 0em;
+        list-style-type: none;
+    }
+    
+    /* Indent toggle children */
+    .toggle > li > details {
+        padding-left: 1.7em;
+    }
+    
+    .toggle > li > details > summary {
+        margin-left: -1.1em;
+    }
+    
+    .selected-value {
+        display: inline-block;
+        padding: 0 0.5em;
+        background: rgba(206, 205, 202, 0.5);
+        border-radius: 3px;
+        margin-right: 0.5em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        white-space: nowrap;
+    }
+    
+    .collection-title {
+        display: inline-block;
+        margin-right: 1em;
+    }
+    
+    .page-description {
+        margin-bottom: 2em;
+    }
+    
+    .simple-table {
+        margin-top: 1em;
+        font-size: 0.875rem;
+        empty-cells: show;
+    }
+    .simple-table td {
+        height: 29px;
+        min-width: 120px;
+    }
+    
+    .simple-table th {
+        height: 29px;
+        min-width: 120px;
+    }
+    
+    .simple-table-header-color {
+        background: rgb(247, 246, 243);
+        color: black;
+    }
+    .simple-table-header {
+        font-weight: 500;
+    }
+    
+    time {
+        opacity: 0.5;
+    }
+    
+    .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+    }
+    
+    img.icon {
+        border-radius: 3px;
+    }
+    
+    .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+    }
+    
+    .user-icon-inner {
+        font-size: 0.8em;
+    }
+    
+    .text-icon {
+        border: 1px solid #000;
+        text-align: center;
+    }
+    
+    .page-cover-image {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        max-height: 30vh;
+    }
+    
+    .page-header-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .page-header-icon-with-cover {
+        margin-top: -0.72em;
+        margin-left: 0.07em;
+    }
+    
+    .page-header-icon img {
+        border-radius: 3px;
+    }
+    
+    .link-to-page {
+        margin: 1em 0;
+        padding: 0;
+        border: none;
+        font-weight: 500;
+    }
+    
+    p > .user {
+        opacity: 0.5;
+    }
+    
+    td > .user,
+    td > time {
+        white-space: nowrap;
+    }
+    
+    input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 0.6em;
+        vertical-align: middle;
+    }
+    
+    p {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    
+    .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+    
+    .code,
+    code {
+        background: rgba(135, 131, 120, 0.15);
+        border-radius: 3px;
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 85%;
+        tab-size: 2;
+    }
+    
+    code {
+        color: #eb5757;
+    }
+    
+    .code {
+        padding: 1.5em 1em;
+    }
+    
+    .code-wrap {
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+    
+    .code > code {
+        background: none;
+        padding: 0;
+        font-size: 100%;
+        color: inherit;
+    }
+    
+    blockquote {
+        font-size: 1.25em;
+        margin: 1em 0;
+        padding-left: 1em;
+        border-left: 3px solid rgb(55, 53, 47);
+    }
+    
+    .bookmark {
+        text-decoration: none;
+        max-height: 8em;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+    }
+    
+    .bookmark-title {
+        font-size: 0.85em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 1.75em;
+        white-space: nowrap;
+    }
+    
+    .bookmark-text {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .bookmark-info {
+        flex: 4 1 180px;
+        padding: 12px 14px 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .bookmark-image {
+        width: 33%;
+        flex: 1 1 180px;
+        display: block;
+        position: relative;
+        object-fit: cover;
+        border-radius: 1px;
+    }
+    
+    .bookmark-description {
+        color: rgba(55, 53, 47, 0.6);
+        font-size: 0.75em;
+        overflow: hidden;
+        max-height: 4.5em;
+        word-break: break-word;
+    }
+    
+    .bookmark-href {
+        font-size: 0.75em;
+        margin-top: 0.25em;
+    }
+    
+    .sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+    .code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+    .serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+    .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+    .pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+    .pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+    .pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+    .pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+    .pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+    .pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+    .pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+    .pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+    .pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+    .pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+    .pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+    .pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+    .pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+    .pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+    .pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+    .pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+    .highlight-default {
+        color: rgba(55, 53, 47, 1);
+    }
+    .highlight-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+    }
+    .highlight-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+    }
+    .highlight-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+    }
+    .highlight-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+    }
+    .highlight-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+    }
+    .highlight-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+    }
+    .highlight-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+    }
+    .highlight-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+    }
+    .highlight-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+    }
+    .highlight-default_background {
+        color: rgba(55, 53, 47, 1);
+    }
+    .highlight-gray_background {
+        background: rgba(241, 241, 239, 1);
+    }
+    .highlight-brown_background {
+        background: rgba(244, 238, 238, 1);
+    }
+    .highlight-orange_background {
+        background: rgba(251, 236, 221, 1);
+    }
+    .highlight-yellow_background {
+        background: rgba(251, 243, 219, 1);
+    }
+    .highlight-teal_background {
+        background: rgba(237, 243, 236, 1);
+    }
+    .highlight-blue_background {
+        background: rgba(231, 243, 248, 1);
+    }
+    .highlight-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+    }
+    .highlight-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+    }
+    .highlight-red_background {
+        background: rgba(253, 235, 236, 1);
+    }
+    .block-color-default {
+        color: inherit;
+        fill: inherit;
+    }
+    .block-color-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+    }
+    .block-color-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+    }
+    .block-color-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+    }
+    .block-color-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+    }
+    .block-color-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+    }
+    .block-color-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+    }
+    .block-color-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+    }
+    .block-color-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+    }
+    .block-color-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+    }
+    .block-color-default_background {
+        color: inherit;
+        fill: inherit;
+    }
+    .block-color-gray_background {
+        background: rgba(241, 241, 239, 1);
+    }
+    .block-color-brown_background {
+        background: rgba(244, 238, 238, 1);
+    }
+    .block-color-orange_background {
+        background: rgba(251, 236, 221, 1);
+    }
+    .block-color-yellow_background {
+        background: rgba(251, 243, 219, 1);
+    }
+    .block-color-teal_background {
+        background: rgba(237, 243, 236, 1);
+    }
+    .block-color-blue_background {
+        background: rgba(231, 243, 248, 1);
+    }
+    .block-color-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+    }
+    .block-color-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+    }
+    .block-color-red_background {
+        background: rgba(253, 235, 236, 1);
+    }
+    .select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+    .select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+    .select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+    .select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+    .select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+    .select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+    .select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+    .select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+    .select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+    .select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+    .select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+    .select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+    .select-value-color-pageGlass { background-color: undefined; }
+    .select-value-color-washGlass { background-color: undefined; }
+    
+    .checkbox {
+        display: inline-flex;
+        vertical-align: text-bottom;
+        width: 16;
+        height: 16;
+        background-size: 16px;
+        margin-left: 2px;
+        margin-right: 5px;
+    }
+    
+    .checkbox-on {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+    
+    .checkbox-off {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+        
+    </style>
+        
+
+    <style>
+    .floating-button {
+        position: fixed;
+        bottom: 20px; /* 화면 하단에서 20px */
+        left: 20px; /* 좌우 여백 */
+        right: 20px; /* 좌우 여백 */
+        z-index: 1000; /* 다른 요소보다 위로 */
+        background-color: black; /* 버튼 배경색 */
+        color: white; /* 텍스트 색상 */
+        text-align: center; /* 텍스트 가운데 정렬 */
+        padding: 20px 10px; /* 버튼 안쪽 여백 */
+        border-radius: 10px; /* 둥근 버튼 */
+        font-size: 18px; /* 텍스트 크기 */
+        font-weight: bold;
+        text-decoration: none; /* 링크 밑줄 제거 */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+        transition: background-color 0.3s ease; /* 마우스 호버 시 애니메이션 */
+    }
+
+    .floating-button:hover {
+        background-color: rgb(241, 121, 15); /* 호버 시 버튼 색상 */
+        color: rgb(20, 19, 19); /* 텍스트 색상 */
+    }
+    /* 화면 크기가 작은 경우 버튼 크기 조정 */
+    @media screen and (max-width: 768px) {
+      .floating-button {
+        font-size: 16px;
+        padding: 12px 0;
+      }
+    }
+</style>
+</head>
+<body>
+<!-- 플로팅 버튼 -->
+ <a href="https://hoodi89.github.io/payment_page/payment_test.html" class="floating-button">지금 결제하고 클래스 참여하기 😎</a>
+ 
+ <article id="1690bff6-cbae-803e-bd98-f142a64348a3" class="page sans"><header><h1 class="page-title"></h1><p class="page-description"></p></header><div class="page-body"><figure id="1690bff6-cbae-81fd-bc41-d904e2c15f6c" class="image"><a href="https://github.com/hoodi89/payment_page/blob/main/modicle.png?raw=true"><img style="width:707.9861450195312px" src="https://github.com/hoodi89/payment_page/blob/main/modicle.png?raw=true"/></a></figure></p><h1 id="1690bff6-cbae-81dd-833c-df2b4de3e148" class="">😫<br/><mark class="highlight-blue_background">모바일 디자인</mark>,<br/>배우기 참 어렵고 힘드시죠?<br/></h1><p id="1690bff6-cbae-81b0-9d6f-c92a969dc337" class=""><br/>기존 vod 동영상 강의는 <br/><strong>쌍방향 소통에 한계</strong>가 있어요. <br/>수십, 수백 페이지 분량의 이론 위주의 강의를 인강 듣듯이 듣기만 해야 합니다.<br/><br/>또한, 배운 것을 토대로 어떻게 화면을 만들어야 하고 <br/>이를 정작 어떻게 적용, 연습해야 하는지에 대한 내용은 다소 빠져 있습니다. <br/>그러다보니, 생각보다 수료율이 저조한 것이 현실이죠…! 😭<br/></p><h3 id="1690bff6-cbae-8117-bdff-df3dff47a50f" class=""><strong>모디클이 이러한 여러분의 고민을 해소해 드릴게요!</strong></h3><p id="1690bff6-cbae-8178-8473-c2cc6f9e4e5e" class="">
+    </p><h2 id="1690bff6-cbae-81bd-a9d3-f0a754ebd131" class="">🔥<br/><span style="border-bottom:0.05em solid">실습</span>과 <span style="border-bottom:0.05em solid">과제</span>를 통해 배우는<br/><mark class="highlight-orange">4주 완성</mark> 모바일 UX/UI 디자인 클래스</h2><p id="1690bff6-cbae-815b-8c85-ea395046e3b6" class="">
+    </p><p id="1690bff6-cbae-814c-bb69-ec763dc630e7" class="">단순히 이론만 배우는 것을 뛰어넘는 따라하며 배우는 <strong>‘실습’</strong>과 이를 응용한 <strong>‘과제’</strong>를 통해 배운것을 적용해 보며 디자인 실력을 한층 <strong>업그레이드</strong> 해보세요!</p><p id="1690bff6-cbae-8109-945b-d350299737a9" class="">
+    </p><h2 id="1690bff6-cbae-81d7-a99b-e19442474015" class="">🖌<br/>실무처럼 ‘와이어프레임’을 통해<br/>디자인을 작업해 봅니다.<br/></h2><p id="1690bff6-cbae-8148-9226-f4e71c4c05d5" class="">
+    </p><p id="1690bff6-cbae-813e-8ec0-ea246b6d8e08" class="">모디클의 주 커리큘럼 중 실습&amp;과제 시 <strong>와이어프레임(wireframe)</strong>을 가지고 디자인을 입혀보는 훈련을 진행해요!<br/><br/></p><p id="1690bff6-cbae-8108-82a8-f5fd4954e2d6" class="">주어진 조건과 서비스에 맞게 화면을 채워나가다 보면 실제로 회사에서 작업하듯이 <strong>화면 구조에 대해서 이해하고 그에 맞게 설계</strong>할 수 있어요!</p><p id="1690bff6-cbae-81b3-9f34-d5cf1a60cbf7" class="">
+    </p><h2 id="1690bff6-cbae-81ab-b389-d03e91c015f7" class="">👥<br/>‘혼자’ 하지 마세요.<br/>’같이‘ 소통하며 진행하세요.<br/><br/></h2><p id="1690bff6-cbae-8182-b36e-f112e93aa248" class="">이론부터 실습, 과제를 진행하며 발생하는 궁금증과 문제를 <strong>튜터의 피드백</strong>을 통해 해결해 나가 보세요! <br/><br/></p><p id="1690bff6-cbae-815d-b80d-c2afe9c2fc21" class="">또한 <strong>클래스에 같이 참여하는 참여자들과 소통</strong>하며 도움을 받아보세요!</p><p id="1690bff6-cbae-81eb-a7e3-f7a73f8f0fd2" class="">
+    </p><p id="1690bff6-cbae-8153-b9a3-f3eb0b7fc413" class="">
+    </p><hr id="1690bff6-cbae-81ab-b89f-c874a09e3042"/><p id="1690bff6-cbae-8111-9169-c139a779ed5a" class="">
+    </p><h1 id="1690bff6-cbae-811a-a9e3-f5f93c6d5303" class="">👍 <br/><br/><mark class="highlight-default"><mark class="highlight-default_background"><strong>이런 분들께 클래스를 <br/></strong></mark></mark><mark class="highlight-orange"><mark class="highlight-default_background"><strong>추천</strong></mark></mark><mark class="highlight-default"><mark class="highlight-default_background"><strong>드립니다!</strong></mark></mark></h1><p id="1690bff6-cbae-81e0-886b-d67777577fdd" class="">
+    </p><div id="1690bff6-cbae-819c-8c24-d0265cb743d8" class="column-list"><div id="1690bff6-cbae-81a5-94de-f66cba1bcf27" style="width:50%" class="column"><p id="1690bff6-cbae-8187-bdcd-de1145cc3830" class=""><strong>👉 UX/UI 디자인에 대해서 배우고 싶어하는 분</strong></p></div><div id="1690bff6-cbae-81e4-947c-fbd0eb49fe23" style="width:50%" class="column"><p id="1690bff6-cbae-81a7-8ac0-c98f8cbd8fda" class=""><strong>👉 UX/UI 디자이너를 지망하는 분</strong></p></div></div><div id="1690bff6-cbae-8173-9b52-e218241eac65" class="column-list"><div id="1690bff6-cbae-816c-8f2e-f3c7259e1ca5" style="width:50%" class="column"><p id="1690bff6-cbae-81e4-99b1-c36f8c9f0e45" class=""><strong>👉 UX/UI 디자인 쪽으로 취업 준비를 하시는 분</strong></p></div><div id="1690bff6-cbae-8101-9d5c-f8120919740f" style="width:50%" class="column"><p id="1690bff6-cbae-8118-8c8f-d7eb0ca61e7e" class=""><strong>👉 앱 디자인의 기초를 탄탄히 하고 싶으신 분</strong></p></div></div><div id="1690bff6-cbae-81d3-94a4-fd73505a1f1d" class="column-list"><div id="1690bff6-cbae-8176-83c9-f6ab1bd8d9dd" style="width:50%" class="column"><p id="1690bff6-cbae-8194-88db-e94650db66c8" class=""><strong>👉 직접 화면을 디자인 해 보고 싶으신 분</strong></p></div><div id="1690bff6-cbae-8111-8134-ddea6aa4f8bf" style="width:50%" class="column"><p id="1690bff6-cbae-817a-b3f1-ebc7040bc7bf" class=""><strong>👉 피그마는 어느정도 다룰 줄 아는데,<br/>     화면을 디자인 하는 법을 배우고 싶으신 분<br/></strong></p></div></div><p id="1690bff6-cbae-819c-83ed-d21885bb0de6" class="">
+    </p><hr id="1690bff6-cbae-816d-87f7-d6fc9d8c4625"/><p id="1690bff6-cbae-819a-aa78-fa3bbfd2c37e" class="">
+    </p><h1 id="1690bff6-cbae-8197-a7c9-e9c97af054e0" class=""><mark class="highlight-orange"><mark class="highlight-default_background"><strong>🎯<br/>모디클</strong></mark></mark>만의 <br/>차별성 있는 특징<br/></h1><p id="1690bff6-cbae-818a-92d6-cc2c116b1042" class="">
+    </p><h2 id="1690bff6-cbae-8166-85b4-e816bf5a90c4" class=""><mark class="highlight-orange_background">1. 직접 따라하며                                                  <br/>체계적으로 배우는 실습                                     <br/></mark></h2><p id="1690bff6-cbae-8173-868b-f9984ef4ffda" class="">
+    </p><p id="1690bff6-cbae-814a-95b1-c125fd302b43" class="">매주 진행하는 <strong>튜터의 모바일 화면 설계 및 디자인 실습</strong>을 통해 배운 내용들이 실제로 어떻게 적용되는지 이해할 수 있습니다. </p><p id="1690bff6-cbae-819f-87d7-deb29d6924f6" class=""><strong>직접 화면을 디자인하며</strong> 학습 효과를 높혀보세요! </p><p id="1690bff6-cbae-8113-a3e5-fce7c495471a" class="">
+    </p><h2 id="1690bff6-cbae-8110-a56a-edadee76173a" class=""><mark class="highlight-orange_background">2. 실습을 응용한 과제를 통한                           <br/>디자인 실력 향상                                                 <br/></mark></h2><p id="1690bff6-cbae-81de-9d8a-e29fc116dc37" class="">
+    </p><p id="1690bff6-cbae-8120-92bf-c12eb2dba879" class="">회사에서 UX/UI 디자이너로 일할 때는 <strong>스스로 판단하여 화면 설계</strong>를 해야 하죠! </p><p id="1690bff6-cbae-81bc-832d-c292b0ae648c" class="">따라하며 배운 내용이 ‘내 것’이 되기 위해서는 <strong>스스로 작업해 보는것이 가장 빠르게 실력을 향상</strong>시킬 수 있습니다.<strong><br/><br/></strong></p><h2 id="1690bff6-cbae-819b-9a83-ddb583155c1b" class=""><mark class="highlight-orange_background">3. 튜터 및 참여자들과의                                     <br/>활발한 피드백 &amp; 소통을 통한 해결                    <br/></mark></h2><p id="1690bff6-cbae-81c6-8a10-f411b1d41597" class="">
+    </p><p id="1690bff6-cbae-81ca-beb4-e5f59088d09b" class="">내가 디자인 한 화면이 잘 된 화면인지, 문제는 무엇인지 부족한 점이 무엇인지 <strong>튜터에게 피드백을 받고</strong></p><p id="1690bff6-cbae-81e4-b9f2-ec9c51f10db5" class=""><strong>같이 진행하는 참여자들과 같이 공유하며 소통</strong>해 보세요!</p><p id="1690bff6-cbae-81fe-8401-f0bb8c7d8504" class="">
+    </p><p id="1690bff6-cbae-81ec-8dcc-ed8099eb1f33" class="">
+    </p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-8120-a3b2-fd9749c53fae"><div style="width:100%"><h3 id="1690bff6-cbae-8193-a271-fcac74682dab" class="">💡 <strong><a href="https://www.notion.so/1690bff6cbae803ebd98f142a64348a3?pvs=21">지금 알림 신청하시고, </a></strong><strong><a href="https://www.notion.so/1690bff6cbae803ebd98f142a64348a3?pvs=21"><span style="border-bottom:0.05em solid">선착순</span></a></strong><strong><a href="https://www.notion.so/1690bff6cbae803ebd98f142a64348a3?pvs=21">으로 클래스에 참여해 보세요!</a></strong></h3></div></figure><p id="1690bff6-cbae-8157-b5f1-c7cdf9175078" class="">
+    </p><h1 id="1690bff6-cbae-8139-9dce-cbcf81778759" class="">💡<br/>클래스는<br/>이렇게 진행해요!<br/></h1><div id="1690bff6-cbae-817c-a913-eda9bff77b41" class="column-list"><div id="1690bff6-cbae-8131-a075-c3b47beb5dc9" style="width:50%" class="column"><figure id="1690bff6-cbae-81e1-bf38-e16a7d39a93f" class="image"><a href="https://github.com/hoodi89/payment_page/blob/main/zoom.png?raw=true"><img style="width:560.98095703125px" src="https://github.com/hoodi89/payment_page/blob/main/zoom.png?raw=true"/></a></figure></div><div id="1690bff6-cbae-818e-9981-e8f538d104c0" style="width:50%" class="column"><p id="1690bff6-cbae-81d5-bfef-e42c7167a2b7" class=""><mark class="highlight-red"><strong>[각 주차별 실시간 모바일 디자인 강의 진행]</strong></mark></p><ul id="1690bff6-cbae-81cf-b71d-f9c6c5368e2b" class="bulleted-list"><li style="list-style-type:disc">각 주차 별로 모바일 디자인에서 중요한 <strong>여러 정보, 팁, 실무와 관련된 내용</strong>에 대해서 배워요.</li></ul><ul id="1690bff6-cbae-8178-a128-eddf15057bcd" class="bulleted-list"><li style="list-style-type:disc"><strong>실제 앱 서비스 화면</strong>을 보며 이해를 도와요.</li></ul><ul id="1690bff6-cbae-8184-9c55-d0f61657b5e0" class="bulleted-list"><li style="list-style-type:disc">강의가 끝나고 <strong>질문/답변</strong> 시간에 궁금한 점들을 확인해요.</li></ul><ul id="1690bff6-cbae-81d1-8a65-d2b00d2a6877" class="bulleted-list"><li style="list-style-type:disc">불가피하게 참여하지 못하는 경우에도 <strong>녹화본 VOD를</strong> 통해 학습할 수 있어요.</li></ul></div></div><p id="1690bff6-cbae-8165-84be-dd7025cf9087" class="">
+    </p><div id="1690bff6-cbae-81cc-a3c3-e6a772e17cc5" class="column-list"><div id="1690bff6-cbae-81c2-a796-d58a36cce08a" style="width:50%" class="column"><figure id="1690bff6-cbae-81cd-aba9-e6574b50fe99" class="image"><a href="https://github.com/hoodi89/payment_page/blob/main/tutor.png?raw=true"><img style="width:560.98095703125px" src="https://github.com/hoodi89/payment_page/blob/main/tutor.png?raw=true"/></a></figure></div><div id="1690bff6-cbae-8130-ac63-c1b94d0d9c02" style="width:50%" class="column"><p id="1690bff6-cbae-81a3-b85a-fccbdf66d765" class=""><mark class="highlight-red"><strong>[배운 내용을 토대로 튜터와 함께 화면 제작 실습]</strong></mark></p><ul id="1690bff6-cbae-8114-86d3-d3ef6bc2d3ff" class="bulleted-list"><li style="list-style-type:disc">이론만으로 그치지 않고 실제 배운 정보들을 어떻게 활용할 수 있는지를 <strong>직접 따라하며 연습</strong>할 수 있어요.</li></ul></div></div><p id="1690bff6-cbae-814d-99db-fa22072d44cd" class="">
+    </p><div id="1690bff6-cbae-81a3-a49c-ffea5bf338f9" class="column-list"><div id="1690bff6-cbae-8187-a976-dbde2b85cfa3" style="width:50%" class="column"><figure id="1690bff6-cbae-81c3-a6c2-c87b43138751" class="image"><a href="https://github.com/hoodi89/payment_page/blob/main/silsup.png?raw=true"><img style="width:560.98095703125px" src="https://github.com/hoodi89/payment_page/blob/main/silsup.png?raw=true"/></a></figure></div><div id="1690bff6-cbae-8123-8661-e959c0816e8f" style="width:50%" class="column"><p id="1690bff6-cbae-81a6-b8cf-ca8dfdc19727" class=""><mark class="highlight-red"><strong>[실습을 응용한 와이어프레임 토대의 화면 제작]</strong></mark></p><ul id="1690bff6-cbae-815f-81e4-fc85f121b569" class="bulleted-list"><li style="list-style-type:disc">실제로 실무에서 하는 것처럼 <strong>주어진 와이어프레임과 그에 맞는 조건</strong>을 가지고 스스로 디자인을 적용해 보며 <strong>화면 설계 능력</strong>을 키울 수 있어요.</li></ul><ul id="1690bff6-cbae-817b-82d3-e81c5ab8d2ae" class="bulleted-list"><li style="list-style-type:disc">과제를 진행하다가 도움이 필요하면 <strong>튜터에게 도움</strong>을 청할 수 있어요.</li></ul></div></div><p id="1690bff6-cbae-81d9-a2d5-fae7be07397f" class="">
+    </p><div id="1690bff6-cbae-81ba-b2c5-f02fd5546370" class="column-list"><div id="1690bff6-cbae-8138-aba1-fa387d3d4dd6" style="width:50%" class="column"><figure id="1690bff6-cbae-81c3-b70f-eef51feac341" class="image"><a href="https://github.com/hoodi89/payment_page/blob/main/feedback.png?raw=true"><img style="width:560px" src="https://github.com/hoodi89/payment_page/blob/main/feedback.png?raw=true"/></a></figure></div><div id="1690bff6-cbae-81f9-9b81-ca92448b9220" style="width:50%" class="column"><p id="1690bff6-cbae-818f-ad3f-e93590bca30c" class=""><mark class="highlight-red"><strong>[지속적인 피드백을 통한 문제점 보완 및 실력 향상]</strong></mark></p><ul id="1690bff6-cbae-817d-9836-cfdb4737aae7" class="bulleted-list"><li style="list-style-type:disc"><strong>막히는 부분과 궁금한 점</strong>들을 <strong>튜터에게 묻고 답하여</strong> 확실히 짚고 넘어 갈 수 있어요.</li></ul></div></div><p id="1690bff6-cbae-8152-a55a-d0817fdfcaf8" class="">
+    </p><p id="1690bff6-cbae-8119-9494-e20c1c27823d" class="">
+    </p><hr id="1690bff6-cbae-8176-a669-cba29ca41d12"/><p id="1690bff6-cbae-8131-8d96-ea42315e3987" class="">
+    </p><h1 id="1690bff6-cbae-81cb-afaa-e681136bfc44" class="">📚 <br/>모디클 <br/>상세 커리큘럼<br/></h1><h3 id="1690bff6-cbae-81b2-b80c-f506ff1207ca" class=""><strong>다음의 과정을 통하여 클래스가 진행됩니다.</strong></h3><p id="1690bff6-cbae-813a-b5f1-f7dee1972124" class="">
+    </p><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-8199-b851-d6d83733d68b"><div style="width:100%"><h3 id="1690bff6-cbae-8180-a385-d2e00c04f358" class=""><strong>1주차 : 모바일 디자인의 기초 다지기</strong></h3><ul id="1690bff6-cbae-8183-8de3-d152ff4b6e10" class="toggle"><li><details open=""><summary><mark class="highlight-blue"><strong>1주차 강의 상세 보기</strong></mark></summary><ul id="1690bff6-cbae-81b3-a714-ce2f6a70976e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default">기초 컬러 개념</mark></li></ul><ul id="1690bff6-cbae-8190-b6cb-e5ffe4cc72da" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default">컬러의 위계</mark></li></ul><ul id="1690bff6-cbae-816d-a0b8-f9957ba94b11" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default">폰트 &amp; 텍스트</mark></li></ul><ul id="1690bff6-cbae-812b-bf72-d401688414bc" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default">여백</mark></li></ul><ul id="1690bff6-cbae-810e-8bce-c4431630f10d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><mark class="highlight-orange_background">강의 내용을 토대로 한 실습 &amp; 과제</mark></mark></li></ul></details></li></ul></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-81ae-a82b-ed3614228af3"><div style="width:100%"><h3 id="1690bff6-cbae-8176-948e-dfab0caf2a21" class=""><strong>2주차 : 필수적으로 알아야 할 컴포넌트 및 UI의 이해</strong></h3><ul id="1690bff6-cbae-8123-b48f-f8a889eeccc1" class="toggle"><li><details open=""><summary><mark class="highlight-blue"><strong>2주차 강의 상세 보기</strong></mark></summary><ul id="1690bff6-cbae-8119-a6d6-ce9e9595a274" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default">버튼의 정의</mark></li></ul><ul id="1690bff6-cbae-8100-a1e5-ca620fbc5a3f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default">컴포넌트의 종류</mark></li></ul><ul id="1690bff6-cbae-818d-99e3-fa75d12e4a3c" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><mark class="highlight-orange_background">강의 내용을 토대로 한 실습 &amp; 과제</mark></mark></li></ul></details></li></ul></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-81af-a4a2-c3ba1a738877"><div style="width:100%"><h3 id="1690bff6-cbae-8143-894e-f261ce0a1860" class=""><strong>3주차 : 모바일 서비스의 주요 화면 별 패턴 알아보기</strong></h3><ul id="1690bff6-cbae-8185-bca2-f3ce7e8fad7d" class="toggle"><li><details open=""><summary><mark class="highlight-blue"><strong>3주차 강의 상세 보기</strong></mark></summary><ul id="1690bff6-cbae-8148-80db-e460755bb966" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><mark class="highlight-default_background">서비스 진입 전 공통 패턴</mark></mark><ul id="1690bff6-cbae-81e9-8db0-f169f68f4b2a" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-default">스플래시 화면, 로그인, 회원가입</mark></li></ul></li></ul><ul id="1690bff6-cbae-8166-95f8-d8654e27b5ee" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><mark class="highlight-default_background">서비스 진입 후 공통 패턴</mark></mark><ul id="1690bff6-cbae-8139-9bab-f6bf9a41ae6e" class="bulleted-list"><li style="list-style-type:circle">메인, GNB, 컨텐츠 리스트, 선택, 필터&amp;정렬 등</li></ul></li></ul><ul id="1690bff6-cbae-8112-9bd0-f7b07b305744" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><mark class="highlight-orange_background">강의 내용을 토대로 한 실습 &amp; 과제</mark></mark></li></ul></details></li></ul></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-8165-9ca5-cc41b1d4f52f"><div style="width:100%"><h3 id="1690bff6-cbae-81f5-8804-e6fc5047936c" class=""><strong>4주차 : 각 주차 배운 내용을 토대로 한 최종 과제 및 발표</strong></h3><p id="1690bff6-cbae-81dd-a479-e01171d71832" class="">→ 여러 화면이 연계되어 있는 <strong>MVP 형태</strong>의 화면 디자인 </p></div></figure><p id="1690bff6-cbae-8127-8fb5-c5ccead35392" class="">
+    </p><p id="1690bff6-cbae-81ff-bd2e-e0bc2e6b1cb4" class="">
+    </p><h1 id="1690bff6-cbae-8190-893c-dda3119571b4" class="">👩‍👧‍👦<br/>모집인원 및 <br/>가격 안내<br/></h1><p id="1690bff6-cbae-8186-aff3-e9bf1f3b164e" class="">
+    </p><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-81b3-a0fa-e1aaa785c9d4"><div style="width:100%"><h3 id="1690bff6-cbae-81e5-9b3a-e53d24049077" class=""><strong>💰가격 : 25만원</strong></h3><p id="1690bff6-cbae-819c-9239-c476c8923935" class="">→ *해당 기수의 가격이 <strong>가장 저렴해요!</strong> 초기 혜택을 누려보세요 👍</p></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-81c8-9184-c9d30b68308a"><div style="width:100%"><h3 id="1690bff6-cbae-811d-9354-e5e647406631" class=""><strong>🙋🏻‍♀️ 최대 모집인원 : 20명</strong></h3><ul id="1690bff6-cbae-810a-9bf1-f9d2042502a6" class="bulleted-list"><li style="list-style-type:disc">효율적이고 개개인에 집중된 클래스 진행을 위해, 최대 인원이 제한됨을 양해 부탁드립니다! 🙏</li></ul><ul id="1690bff6-cbae-81f7-9d96-c5a763fafaf3" class="bulleted-list"><li style="list-style-type:disc"><strong>한 조당 최대 10명으로 2개 조를 짜서 진행</strong>합니다. <ul id="1690bff6-cbae-81cc-8fac-d9807600d0cc" class="bulleted-list"><li style="list-style-type:circle">조원들끼리 서로 커뮤니케이션과 소통을 할 수 있도록 진행할 예정입니다 😇</li></ul></li></ul><ul id="1690bff6-cbae-8177-9d04-ec8f372564ac" class="bulleted-list"><li style="list-style-type:disc">알림 신청을 했는데 선착순으로 인해 인원이 마감될 경우, 다음 기수의 클래스 오픈 시 <strong>참여 우선권</strong>을 드립니다! </li></ul></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-8169-aa36-e50ba0b81e63"><div style="width:100%"><h3 id="1690bff6-cbae-8187-9be5-ded15b4ab418" class=""><strong>🗓 클래스 오픈 예정 날짜 : 12월 말</strong></h3><ul id="1690bff6-cbae-813b-9612-ede0691079d6" class="bulleted-list"><li style="list-style-type:disc"><strong><span style="border-bottom:0.05em solid">알림 신청한 분들에게 </span></strong><span style="border-bottom:0.05em solid">클래스 오픈 전에 미리 연락을 드려요.</span></li></ul></div></figure><p id="1690bff6-cbae-8109-a3a1-d2438de3a7d8" class="">
+    </p><p id="1690bff6-cbae-8160-a5c2-e46877044140" class="">
+    </p><hr id="1690bff6-cbae-8169-9e72-dee06fc8b7f4"/><p id="1690bff6-cbae-8177-a7e4-fc0e06a60e06" class="">
+    </p><h1 id="1690bff6-cbae-81bd-bcb7-d00e855ac1e6" class="">😎 <br/>튜터 소개<br/></h1><div id="1690bff6-cbae-8186-92af-d1fdfbe94ce2" class="column-list"><div id="1690bff6-cbae-81db-a441-cd2b96261697" style="width:50%" class="column"><figure id="1690bff6-cbae-8113-88b7-dcd83d58b884" class="image" style="text-align:left"><a href="https://github.com/hoodi89/payment_page/blob/main/logo.png?raw=true"><img style="width:384px" src="https://github.com/hoodi89/payment_page/blob/main/logo.png?raw=true"/></a></figure></div><div id="1690bff6-cbae-81d7-a832-ee0b8f31693c" style="width:50%" class="column"><figure id="1690bff6-cbae-8143-bbda-cb9a304b253a" class="image"><a href="https://github.com/hoodi89/payment_page/blob/main/port.png?raw=true"><img style="width:384px" src="https://github.com/hoodi89/payment_page/blob/main/port.png?raw=true"/></a></figure></div></div><h2 id="1690bff6-cbae-8141-9992-cc2e5e0afce4" class=""><strong>후디 Hoodi</strong></h2><blockquote id="1690bff6-cbae-810b-bbcd-ff15a483ed16" class=""><strong>“모바일 디자인과 UX/UI 디자인의 레벨 업을<br/>후디와 함께 하실 준비 되셨나요?👊”<br/></strong></blockquote><p id="1690bff6-cbae-81cb-acbe-c38f144eeaf5" class="">
+    </p><p id="1690bff6-cbae-810e-8e7b-d7e702873783" class="">여러 디자인 커뮤니티와 디자이너 지망생, 취준생, 디자이너들을 만나면서 <strong>“어떻게 하면 그들이 쉽고 정확하게 UX/UI 디자인을 배울 수 있을까?”</strong>를 고민했습니다. 기존의 온라인 강의와는 다른 <strong>후디만의 밀착형 클래스</strong>를 통해 여러분의 성장을 도와드리겠습니다!</p><p id="1690bff6-cbae-8188-b6da-c8815735748a" class="">
+    </p><ul id="1690bff6-cbae-81ac-8709-dd8010c1c5fa" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink"><strong>삼성생명 TF 워리스 ‘맘토링’ 앱</strong></mark> UX/UI 디자인 총괄</li></ul><ul id="1690bff6-cbae-8151-9684-d9f5204b290a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink"><strong>삼성전자 가전사업부 ‘Smart things’</strong></mark> UX 팀 과제 협업 진행</li></ul><ul id="1690bff6-cbae-8161-b976-d94eb9f82bcd" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink"><strong>40건이 넘는 여러 스타트업</strong></mark>의 MVP 앱 설계 및 UX/UI 디자인 진행<br/><br/><mark class="highlight-gray">MVP(Minimum Viable Product) : 서비스의 핵심 위주로 설계한 초기 서비스를 말합니다.</mark></li></ul><ul id="1690bff6-cbae-817c-99c0-d73d03c84b1f" class="bulleted-list"><li style="list-style-type:disc">텀블벅을 통한 모바일 디자인 전자책 펀딩<strong> </strong><mark class="highlight-pink"><strong>415% 수익률</strong></mark> 달성</li></ul><ul id="1690bff6-cbae-810b-a1ba-d6d31e2d5752" class="bulleted-list"><li style="list-style-type:disc">네이버 엑스퍼트 및 크몽 <mark class="highlight-pink"><strong>앱 기획/디자인 컨설팅</strong></mark></li></ul><p id="1690bff6-cbae-81d4-b3fa-e6bb2d2f3ac0" class="">
+    </p><p id="1690bff6-cbae-8176-8d14-e151857ae710" class="">
+    </p><p id="1690bff6-cbae-813e-a7b6-c2f3b1bf833d" class="">
+    </p><p id="1690bff6-cbae-819d-ac90-c7a24cef34d7" class=""><strong>👇 후디의 스레드 보기</strong></p><figure id="1690bff6-cbae-8147-b60b-df953d07b3ae"><a href="https://www.threads.net/@hoodi_ux" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">후디 hoodi (@hoodi_ux) • Threads, Say more</div><div class="bookmark-description">2.2K Followers • 6 Threads • 🌀 온라인 모바일 디자인 클래스 12월말 오픈 예정! 🌀 UX/UI 디자인을 쉽게 배울 수 있도록 교육 준비 중! 🌀 디자인 팁, 생각, 정보들을 풀고 있어요. 🌀 BUT 디자인 얘기만 하는건 아닌게 함정 😇 ⬇️디자인 교육 관련, 디자인 질문은 요기 ⬇️. See the latest...</div></div><div class="bookmark-href"><img src="https://static.cdninstagram.com/rsrc.php/v4/yV/r/giQBh6jDlMa.png" class="icon bookmark-icon"/>https://www.threads.net/@hoodi_ux</div></div></a></figure><p id="1690bff6-cbae-8169-8493-c080f4597244" class="">
+    </p><p id="1690bff6-cbae-8119-8d23-e223f4c98a77" class="">
+    </p><h1 id="1690bff6-cbae-8135-b410-eb0a7a4b08fb" class="">🔎 <br/>클래스 안내 사항<br/></h1><p id="1690bff6-cbae-8139-8a79-c2ad4499b62f" class="">
+    </p><ul id="1690bff6-cbae-81b5-86b4-cd7e1b7fd548" class="bulleted-list"><li style="list-style-type:disc">본 클래스는 실습 및 과제 진행을 위해 기본적인 &#x27;피그마&#x27; 툴 사용이 필요합니다.</li></ul><ul id="1690bff6-cbae-811a-bfed-c05d578b3f3f" class="bulleted-list"><li style="list-style-type:disc">본 클래스는 모바일 디자인에 대해 배우고 싶어하는 분들, 디자이너 지망생을 위한 클래스입니다.</li></ul><ul id="1690bff6-cbae-8137-9331-ee6b78a23561" class="bulleted-list"><li style="list-style-type:disc">각 주차별 내용 정리 pdf 문서를 첫 주차에 공유하고, 실시간 강의에서는 시각적 자료 위주로 진행합니다.</li></ul><ul id="1690bff6-cbae-812c-a38f-e0a5dbeb7aff" class="bulleted-list"><li style="list-style-type:disc">실시간 클래스 진행은 &#x27;줌&#x27; 서비스를 통해 진행할 예정입니다. 실습의 경우는 줌으로 피그마 화면을 공유하여 피그마에서 같이 화면 제작 작업을 해보는 시간을 갖습니다.</li></ul><ul id="1690bff6-cbae-8197-a84c-d3e9b8348288" class="bulleted-list"><li style="list-style-type:disc">과제는 실습한 화면을 응용하여 주어진 와이어프레임 및 조건을 가지고 스스로 적용해보고 고민하며 화면을 디자인 할 수 있도록 진행합니다.</li></ul><p id="1690bff6-cbae-817c-a8c6-d87d64f83b48" class="">
+    </p><p id="1690bff6-cbae-81d2-9ff3-f67f96d74ae6" class="">
+    </p><hr id="1690bff6-cbae-81ee-a84b-c08342960907"/><p id="1690bff6-cbae-81d0-abfd-fe33719f6c05" class="">
+    </p><h1 id="1690bff6-cbae-81e5-879f-f7472b3cadba" class="">💬<br/>자주 묻는 질문<br/>(FAQ)<br/></h1><p id="1690bff6-cbae-816b-822a-edb017b164bd" class="">
+    </p><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-8197-8ada-e684805b54b9"><div style="width:100%"><p id="1690bff6-cbae-8122-a873-d2a1432caeb2" class=""><mark class="highlight-orange"><strong>Q.</strong></mark><strong> 클래스를 위해 피그마를 다를 줄 알아야 하나요?</strong></p><ul id="1690bff6-cbae-8166-95ee-eb33d64408cd" class="toggle"><li><details open=""><summary>답변 보기</summary><p id="1690bff6-cbae-81db-8155-f940496bc1c0" class="">네, 본 클래스는 실습 및 과제에 <strong>피그마로 화면을 제작하는 과정</strong>이 있기 때문에 <strong>필수적으로</strong> 피그마 기초 툴 다루는 법을 아셔야 합니다.</p></details></li></ul></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-814f-9531-e680a8883d5b"><div style="width:100%"><p id="1690bff6-cbae-8168-b196-c923a0542415" class=""><mark class="highlight-orange"><strong>Q.</strong></mark><strong> 실습은 어떻게 진행되나요?</strong></p><ul id="1690bff6-cbae-8137-a2df-da46a8cce8c4" class="toggle"><li><details open=""><summary>답변 보기</summary><p id="1690bff6-cbae-8183-9387-dc391c6049fc" class="">실습은 이론을 토대로 배운 내용을 바탕으로, <strong>튜터를 따라하며 준비한 와이어프레임에 디자인</strong>을 입혀보는 시간을 갖습니다. <br/><br/>이를 통해 실제로 이론 내용이 화면이 어떻게 적용되는지 체화할 수 있죠!<br/></p></details></li></ul></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-8128-812f-e064c2f8ea21"><div style="width:100%"><p id="1690bff6-cbae-818f-bce6-e5806419ba40" class=""><mark class="highlight-orange"><strong>Q.</strong></mark><strong> 커뮤니케이션은 주로 어떻게 진행 하나요?</strong></p><ul id="1690bff6-cbae-818a-a66f-e4cb8bf552a6" class="toggle"><li><details open=""><summary>답변 보기</summary><p id="1690bff6-cbae-81be-9f12-db24213bd8eb" class="">효율적인 커뮤니케이션 및 소통을 위해서, 본 클래스는 <strong>슬랙(slack)</strong>을 이용하여 진행합니다.<br/><br/>슬랙은 효과적인 커뮤니케이션 툴로서, 실제로 많은 회사에서 프로젝트 시에 유용하게 사용하고 있습니다. 슬랙에 튜터가 공지사항이나 관련 정보, 안내 글 등을 전달드릴 예정입니다.<br/></p></details></li></ul></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-81a0-b7a4-df44ccb28139"><div style="width:100%"><p id="1690bff6-cbae-8182-a122-d0d7eec92fb7" class=""><mark class="highlight-orange"><strong>Q.</strong></mark><strong> 실시간 줌(Zoom) 강의 시에 영상을 켜야 할까요?</strong></p><ul id="1690bff6-cbae-811f-a200-ce25b716dd5e" class="toggle"><li><details open=""><summary>답변 보기</summary><p id="1690bff6-cbae-81ca-b374-e64938f15b03" class="">되도록 <strong><span style="border-bottom:0.05em solid">참여자들의 얼굴을 서로 볼 수 있도록 영상을 키는것을 권장</span></strong> 드립니다. 단순히 혼자 배우고 학습하는 것이 아닌, 참여자들과 함께 소통하며 진행하는 프로그램이기 때문에 서로 얼굴을 보며 친밀해지는 것도 중요하다고 생각합니다. <br/><br/>여건 상 피치 못하게 얼굴을 드러내지 못하는 경우에는 영상을 끄셔도 좋습니다.<br/></p></details></li></ul></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-8118-ae1f-d544d3e78837"><div style="width:100%"><p id="1690bff6-cbae-81b4-9839-ce9690e568d5" class=""><mark class="highlight-orange"><mark class="highlight-default_background"><strong>Q.</strong></mark></mark><strong> 강의 당일에 줌에 참여하지 못하는 경우는 어떡하나요? 😭</strong></p><ul id="1690bff6-cbae-81df-aab2-d254b697b953" class="toggle"><li><details open=""><summary>답변 보기</summary><p id="1690bff6-cbae-812b-be5d-cb7d03a4f727" class="">걱정하지 마세요! 부득이하게 해당 강의에 참여하지 못하는 참가자들을 위해 <strong><span style="border-bottom:0.05em solid">강의를 녹화하여 VOD링크로 전달드릴 예정</span></strong>입니다.<br/><br/>다만, 실습 시에는 필수로 참여하셔야 해당 클래스의 <br/><span style="border-bottom:0.05em solid">집중 학습</span>을 하실 수 있어요!</p></details></li></ul></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-81fa-ac83-eda14572a82c"><div style="width:100%"><p id="1690bff6-cbae-81b4-9cc5-df7779028c0e" class=""><mark class="highlight-orange"><strong>Q.</strong></mark><strong> 알림 신청을 한 후에는 어떻게 해야 할까요?</strong></p><ul id="1690bff6-cbae-817a-b549-e7a61c9fc562" class="toggle"><li><details open=""><summary>답변 보기</summary><p id="1690bff6-cbae-81a9-ba0e-cde5e21c0396" class="">알림 신청을 하시면 <strong><span style="border-bottom:0.05em solid">클래스 오픈 하루 전</span></strong>에 문자 및 메일로 참여&amp;결제 링크를 보내 드립니다. <br/><br/>결제를 완료하시면 참여할 수 있는 슬랙(slack) 링크를 보내드립니다. <br/></p></details></li></ul></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="1690bff6-cbae-81ed-af35-c08dba38e829"><div style="width:100%"><p id="1690bff6-cbae-8181-8aa2-c2f72144066d" class=""><mark class="highlight-orange"><strong>Q.</strong></mark><strong> 클래스 환불 정책은 어떻게 되나요?</strong></p><ul id="1690bff6-cbae-81c7-aff2-fc44cbec435e" class="toggle"><li><details open=""><summary>답변 보기</summary><p id="1690bff6-cbae-81d8-bc6e-dd681ddaa1d1" class="">클래스 시작 전까지는 100% 환불이 가능합니다. 다만, 시작 이후에는 환불이 불가하는 점 참고 부탁드립니다!</p></details></li></ul></div></figure><p id="1690bff6-cbae-8111-b851-f4e2bce478e7" class="">▫️<mark class="highlight-gray">기타 궁금한 문의가 있으시다면, </mark><mark class="highlight-gray"><a href="http://pf.kakao.com/_DnZxln/chat"><span style="border-bottom:0.05em solid">카카오톡 채널</span></a></mark><mark class="highlight-gray">에 문의주세요!</mark></div></article></body>
+    <!-- 푸터 추가 -->
+    <footer style="background-color: #535353; color: rgb(123, 123, 123); text-align: center; padding: 10px 0; font-size: 14px; width: 100%; margin: 0; box-sizing: border-box; position: relative; left: 0; right: 0;">
+        <p>&copy;후디
+            대표자명 : 이광후  |  사업자등록번호 : 503-29-62957 
+            사업장 주소 : 경기도 용인시 기흥구 동백죽전대로 444, C602-K60  |  유선번호 : 010-9249-5951
+            <br>Copyright 2024. Hoodi Co. All rights reserved.</p>
+    </footer>
+    </html>
+    
