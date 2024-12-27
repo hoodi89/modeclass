@@ -12,10 +12,27 @@
             padding: 20px;
         }
 
+        h1, h2, h3 {
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
         h1 {
             font-size: 1.75rem;
-            font-weight: bold;
+            margin-top: 1.875rem;
             margin-bottom: 1em;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-top: 1.25rem;
         }
 
         p, ul {
@@ -42,6 +59,17 @@
             border-radius: 8px;
         }
 
+        /* 링크 스타일 */
+        a, a.visited {
+            color: inherit;
+            text-decoration: underline;
+        }
+
+        .pdf-relative-link-path {
+            font-size: 80%;
+            color: #444;
+        }
+
         /* 반응형 스타일 (모바일) */
         @media (max-width: 768px) {
             body {
@@ -55,49 +83,6 @@
             ul {
                 padding-left: 15px;
             }
-        }
-    </style>
-
-        a,
-        a.visited {
-            color: inherit;
-            text-decoration: underline;
-        }
-
-        .pdf-relative-link-path {
-            font-size: 80%;
-            color: #444;
-        }
-
-        h1,
-        h2,
-        h3 {
-            letter-spacing: -0.01em;
-            line-height: 1.2;
-            font-weight: 600;
-            margin-bottom: 0;
-        }
-
-        .page-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-top: 0;
-            margin-bottom: 0.75em;
-        }
-
-        h1 {
-            font-size: 1.875rem;
-            margin-top: 1.875rem;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        h3 {
-            font-size: 1.25rem;
-            margin-top: 1.25rem;
         }
     
         a,
