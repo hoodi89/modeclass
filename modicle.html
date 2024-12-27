@@ -36,6 +36,18 @@
             font-size: 6vw; /* 모바일에서 폰트 크기를 증가 */
         }
     }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* 모바일에서 이미지 크기 조정 */
+    @media (max-width: 768px) {
+        img {
+            width: 80%; /* 모바일 화면에서 이미지 크기를 80%로 설정 */
+        }
+    }
     
     a,
     a.visited {
