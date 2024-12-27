@@ -1,40 +1,33 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>제목 없음</title>
+<style>
+    /* cspell:disable-file */
+    /* webkit printing magic: print all background colors */
+    html {
+        -webkit-print-color-adjust: exact;
+    }
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+    }
 
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>제목 없음</title>
-    <style>
-        /* 기본 HTML과 BODY 스타일 */
-        html,
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    @media only screen {
         body {
-            font-size: 16px; /* 기본 폰트 크기 */
-            line-height: 1.5;
-            margin: 0;
-            padding: 0;
-            white-space: pre-wrap;
-        }
-
-        /* 기본 스타일 */
-        body {
-            color: rgb(55, 53, 47);
             margin: 1em auto;
             max-width: 900px;
             padding: 0 40px;
+            color: rgb(55, 53, 47);
         }
-
-        /* 모바일 화면에서 폰트 크기 증가 */
-        @media (max-width: 768px) {
-            body {
-                font-size: 18px; /* 모바일 화면에서는 폰트를 키운다 */
-            }
-        }
-
-        /* 화면 너비에 맞게 폰트 크기 설정 */
-        @media only screen {
-            body {
-                font-size: 4vw; /* 화면 너비의 4% 크기 */
-            }
-        }    
+    }
+    
+    body {
+        line-height: 1.5;
+        white-space: pre-wrap;
+    }
     a,
     a.visited {
         color: inherit;
