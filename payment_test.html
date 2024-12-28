@@ -34,10 +34,12 @@
     </style>
   </head>
   <body>
-    <!-- 할인 쿠폰 -->
+    <!-- 할인 쿠폰 입력 -->
     <div>
-      <input type="checkbox" id="coupon-box" />
-      <label for="coupon-box"> 5,000원 쿠폰 적용 </label>
+      <label for="coupon-input">쿠폰 코드를 입력하세요:</label>
+      <input type="text" id="coupon-input" placeholder="쿠폰 코드 입력">
+      <button id="apply-coupon-button">쿠폰 적용</button>
+      <p id="coupon-message"></p> <!-- 쿠폰 메시지 출력 -->
     </div>
     <!-- 결제 UI -->
     <div id="payment-method"></div>
@@ -47,6 +49,8 @@
     <button class="button" id="payment-button" style="margin-top: 30px">결제하기</button>
 
     <script>
+      let discountAmount = 0; // 할인 금액 초기화
+      
       main();
 
       async function main() {
@@ -66,7 +70,7 @@
         // ------ 주문의 결제 금액 설정 ------
         await widgets.setAmount({
           currency: "KRW",
-          value: 50000,
+          value: orderAmount - discountAmount, // 할인가격 반영
         });
 
         await Promise.all([
@@ -79,28 +83,31 @@
           widgets.renderAgreement({ selector: "#agreement", variantKey: "AGREEMENT" }),
         ]);
 
-        // ------  주문서의 결제 금액이 변경되었을 경우 결제 금액 업데이트 ------
-        coupon.addEventListener("change", async function () {
-          if (coupon.checked) {
+        // 쿠폰 적용 버튼 클릭 시 이벤트
+        applyCouponButton.addEventListener("click", async function () {
+          const couponCode = couponInput.value.trim();
+
+          if (couponCode === "TUM10DIS") { // 할인 코드가 맞으면 10% 할인 적용
+            discountAmount = orderAmount * 0.1; // 10% 할인 계산
+            couponMessage.textContent = "10% 할인이 적용되었습니다!";
+            couponMessage.style.color = "green"; // 성공 메시지
+
+            // 금액 업데이트
             await widgets.setAmount({
               currency: "KRW",
-              value: 50000 - 5000,
+              value: orderAmount - discountAmount, // 할인된 금액
             });
-
-            return;
+          } else {
+            couponMessage.textContent = "유효하지 않은 쿠폰 코드입니다.";
+            couponMessage.style.color = "red"; // 오류 메시지
           }
-
-          await widgets.setAmount({
-            currency: "KRW",
-            value: 50000,
-          });
         });
 
         // ------ '결제하기' 버튼 누르면 결제창 띄우기 ------
         button.addEventListener("click", async function () {
           await widgets.requestPayment({
             orderId: "8eCLKh4t6uRzPaAT5mwGt",
-            orderName: "토스 티셔츠 외 2건",
+            orderName: "모디클 클래스 참가",
             successUrl: window.location.origin + "/success.html",
             failUrl: window.location.origin + "/fail.html",
             customerEmail: "customer123@gmail.com",
