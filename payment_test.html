@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://js.tosspayments.com/v2/standard"></script>
@@ -31,34 +30,51 @@
       #payment-button:active {
         background-color: #004085;
       }
+
+      /* 비활성화된 상태의 입력 필드와 버튼 스타일 */
+      .disabled {
+        background-color: #f0f0f0; /* 비활성화된 배경 색 */
+        color: #b0b0b0; /* 비활성화된 글자 색 */
+        cursor: not-allowed; /* 비활성화된 상태의 커서 */
+      }
     </style>
   </head>
   <body>
-    
     <!-- 결제 UI -->
     <div id="payment-method"></div>
     <!-- 이용약관 UI -->
     <div id="agreement"></div>
+
+    <!-- 할인 쿠폰 입력 -->
+    <div style="max-width: 600px; margin: 0 auto; padding: 20px; box-sizing: border-box;">
+        <label for="coupon-input" style="font-size: 16px; font-weight: bold; color: #333;">쿠폰 코드를 입력하세요:</label>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+            <input type="text" id="coupon-input" placeholder="쿠폰 코드 입력" 
+                style="padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 8px; width: 100%; box-sizing: border-box;">
+            <button id="apply-coupon-button" 
+                    style="background-color: #0078ff; color: white; font-size: 16px; padding: 12px; border: none; border-radius: 8px; cursor: pointer; width: 100%;">
+                쿠폰 적용
+            </button>
+            <p id="coupon-message" style="margin-top: 10px; font-size: 14px;"></p> <!-- 쿠폰 메시지 출력 -->
+        </div>
+    </div>
+
     <!-- 결제하기 버튼 -->
     <button class="button" id="payment-button" style="margin-top: 30px">결제하기</button>
-    
-    <!-- 할인 쿠폰 입력 -->
-    <div>
-      <label for="coupon-input">쿠폰 코드를 입력하세요:</label>
-      <input type="text" id="coupon-input" placeholder="쿠폰 코드 입력">
-      <button id="apply-coupon-button">쿠폰 적용</button>
-      <p id="coupon-message"></p> <!-- 쿠폰 메시지 출력 -->
-    </div>
-    
+
     <script>
       let discountAmount = 0; // 할인 금액 초기화
-      
+      let orderAmount = 50000; // 예시로 50,000원으로 설정
+
       main();
 
       async function main() {
         const button = document.getElementById("payment-button");
-        const coupon = document.getElementById("coupon-box");
-        // ------  결제위젯 초기화 ------
+        const couponInput = document.getElementById("coupon-input");
+        const applyCouponButton = document.getElementById("apply-coupon-button");
+        const couponMessage = document.getElementById("coupon-message");
+
+        // ------ 결제위젯 초기화 ------
         const clientKey = "test_gck_docs_Ovk5rk1EwkEbP0W43n07xlzm";
         const tossPayments = TossPayments(clientKey);
         // 회원 결제
@@ -66,8 +82,6 @@
         const widgets = tossPayments.widgets({
           customerKey,
         });
-        // 비회원 결제
-        // const widgets = tossPayments.widgets({ customerKey: TossPayments.ANONYMOUS });
 
         // ------ 주문의 결제 금액 설정 ------
         await widgets.setAmount({
@@ -76,20 +90,23 @@
         });
 
         await Promise.all([
-          // ------  결제 UI 렌더링 ------
+          // ------ 결제 UI 렌더링 ------
           widgets.renderPaymentMethods({
             selector: "#payment-method",
             variantKey: "DEFAULT",
           }),
-          // ------  이용약관 UI 렌더링 ------
-          widgets.renderAgreement({ selector: "#agreement", variantKey: "AGREEMENT" }),
+          // ------ 이용약관 UI 렌더링 ------
+          widgets.renderAgreement({
+            selector: "#agreement",
+            variantKey: "AGREEMENT",
+          }),
         ]);
 
         // 쿠폰 적용 버튼 클릭 시 이벤트
         applyCouponButton.addEventListener("click", async function () {
-          const couponCode = couponInput.value.trim();
+          const couponCode = couponInput.value.trim().toLowerCase(); // 입력값을 소문자로 변환
 
-          if (couponCode === "TUM10DIS") { // 할인 코드가 맞으면 10% 할인 적용
+          if (couponCode === "tum10dis") { // 할인 코드가 맞으면 10% 할인 적용
             discountAmount = orderAmount * 0.1; // 10% 할인 계산
             couponMessage.textContent = "10% 할인이 적용되었습니다!";
             couponMessage.style.color = "green"; // 성공 메시지
@@ -99,13 +116,19 @@
               currency: "KRW",
               value: orderAmount - discountAmount, // 할인된 금액
             });
+
+            // 쿠폰 적용 후 입력 필드 비활성화 처리
+            couponInput.disabled = true; // 입력 필드 비활성화
+            applyCouponButton.disabled = true; // 버튼 비활성화
+            couponInput.classList.add("disabled"); // 비활성화된 스타일 추가
+            applyCouponButton.classList.add("disabled"); // 비활성화된 스타일 추가
           } else {
             couponMessage.textContent = "유효하지 않은 쿠폰 코드입니다.";
             couponMessage.style.color = "red"; // 오류 메시지
           }
         });
 
-        // ------ '결제하기' 버튼 누르면 결제창 띄우기 ------
+        // 결제하기 버튼 클릭 시 결제 요청
         button.addEventListener("click", async function () {
           await widgets.requestPayment({
             orderId: "8eCLKh4t6uRzPaAT5mwGt",
