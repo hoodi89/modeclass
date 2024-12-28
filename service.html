@@ -811,7 +811,7 @@ blockquote {
     background-color: #535353; 
     color: rgb(123, 123, 123); 
     text-align: center; 
-    padding: 0px 0; /* 상하 여백만 0px로 설정 */
+    padding: 0; /* 상하 여백을 0으로 설정 */
     font-size: 14px; 
     width: 100%; 
     margin: 0; /* 푸터 밖 여백 제거 */
@@ -823,19 +823,20 @@ blockquote {
     <div style="
         max-width: 900px; /* 텍스트 최대 너비 제한 */
         margin: 0 auto; /* 좌우 중앙 정렬 */
-        padding: 0 20px; /* 내부 좌우 여백 설정 */
+        padding: 0; /* 내부 여백 제거 */
         box-sizing: border-box; /* 패딩 포함하여 너비 계산 */
     ">
         <p style="
-    margin: 0;
-    padding: 0;
-    text-align: center;
-">
-    &copy;후디
-    대표자명 : 이광후 | 사업자등록번호 : 503-29-62957
-    사업장 주소 : 경기도 용인시 기흥구 동백죽전대로 444, C602-K60 | 유선번호 : 010-9249-5951
-    Copyright 2024. Hoodi Co. All rights reserved.
-</p>
+            margin: 0; /* p 태그 기본 여백 제거 */
+            padding: 0; /* 추가 패딩 제거 */
+            text-align: center; /* 텍스트 중앙 정렬 */
+            line-height: 1.2; /* 줄 간격을 조정 */
+        ">
+            &copy;후디<br>
+            대표자명 : 이광후 | 사업자등록번호 : 503-29-62957<br>
+            사업장 주소 : 경기도 용인시 기흥구 동백죽전대로 444, C602-K60 | 유선번호 : 010-9249-5951<br>
+            Copyright 2024. Hoodi Co. All rights reserved.
+        </p>
     </div>
 </footer>
 </html>
