@@ -37,34 +37,84 @@
         color: #b0b0b0; /* 비활성화된 글자 색 */
         cursor: not-allowed; /* 비활성화된 상태의 커서 */
       }
+
+      /* 결제 금액 텍스트 */
+      .price-display {
+        font-size: 32px; /* 텍스트 크기 크게 설정 */
+        font-weight: bold;
+        text-align: center; /* 가운데 정렬 */
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      /* 할인 적용 시 가격 */
+      .discount-price {
+        font-size: 32px;
+        font-weight: bold;
+        color: #e74c3c; /* 할인 금액을 빨간색으로 표시 */
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      /* 쿠폰 입력 필드 스타일 */
+      .coupon-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+        margin-top: 20px;
+      }
+
+      .coupon-container label {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .coupon-container input, .coupon-container button {
+        padding: 12px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .coupon-container button {
+        background-color: #0078ff;
+        color: white;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
     </style>
   </head>
   <body>
+    <!-- 결제 금액 및 쿠폰 입력 UI -->
+    <div class="coupon-container">
+      <p id="total-amount" class="price-display">결제 금액: 250,000 원</p> <!-- 실제 결제 금액 -->
+
+      <label for="coupon-input">쿠폰 코드를 입력하세요:</label>
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+          <input type="text" id="coupon-input" placeholder="쿠폰 코드 입력">
+          <button id="apply-coupon-button">
+              쿠폰 적용
+          </button>
+          <p id="coupon-message"></p> <!-- 쿠폰 메시지 출력 -->
+      </div>
+    </div>
+
     <!-- 결제 UI -->
     <div id="payment-method"></div>
     <!-- 이용약관 UI -->
     <div id="agreement"></div>
-
-    <!-- 할인 쿠폰 입력 -->
-    <div style="max-width: 600px; margin: 0 auto; padding: 20px; box-sizing: border-box;">
-        <label for="coupon-input" style="font-size: 16px; font-weight: bold; color: #333;">쿠폰 코드를 입력하세요:</label>
-        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
-            <input type="text" id="coupon-input" placeholder="쿠폰 코드 입력" 
-                style="padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 8px; width: 100%; box-sizing: border-box;">
-            <button id="apply-coupon-button" 
-                    style="background-color: #0078ff; color: white; font-size: 16px; padding: 12px; border: none; border-radius: 8px; cursor: pointer; width: 100%;">
-                쿠폰 적용
-            </button>
-            <p id="coupon-message" style="margin-top: 10px; font-size: 14px;"></p> <!-- 쿠폰 메시지 출력 -->
-        </div>
-    </div>
 
     <!-- 결제하기 버튼 -->
     <button class="button" id="payment-button" style="margin-top: 30px">결제하기</button>
 
     <script>
       let discountAmount = 0; // 할인 금액 초기화
-      let orderAmount = 50000; // 예시로 50,000원으로 설정
+      let orderAmount = 250000; // 실제 결제 금액 250,000원으로 설정
 
       main();
 
@@ -73,6 +123,7 @@
         const couponInput = document.getElementById("coupon-input");
         const applyCouponButton = document.getElementById("apply-coupon-button");
         const couponMessage = document.getElementById("coupon-message");
+        const totalAmountDisplay = document.getElementById("total-amount");
 
         // ------ 결제위젯 초기화 ------
         const clientKey = "test_gck_docs_Ovk5rk1EwkEbP0W43n07xlzm";
@@ -116,6 +167,10 @@
               currency: "KRW",
               value: orderAmount - discountAmount, // 할인된 금액
             });
+
+            // 결제 금액을 업데이트 (천 단위 쉼표 추가)
+            totalAmountDisplay.textContent = `결제 금액: ${(orderAmount - discountAmount).toLocaleString()} 원`;
+            totalAmountDisplay.style.fontSize = '32px'; // 텍스트 크기 다시 설정
 
             // 쿠폰 적용 후 입력 필드 비활성화 처리
             couponInput.disabled = true; // 입력 필드 비활성화
